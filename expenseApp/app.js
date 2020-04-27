@@ -131,7 +131,14 @@ app.use("/", index);
 const authRoutes = require("./routes/auth-routes");
 app.use("/", authRoutes);
 
+const expensesView = require("./routes/expenses");
+app.use("/", expensesView);
+
 const itemRoutes = require("./routes/item-routes");
 app.use("/", itemRoutes);
 
 module.exports = app;
+
+app.listen(3000, function () {
+  console.log("Example app listening on port 3000test node!");
+});
