@@ -1,8 +1,99 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+* {
+  margin: 0;
+  padding: 0; }
 
-a {
-  color: #00B7FF; }
+.nav {
+  height: 10vh;
+  width: 100vw;
+  background-color: #16a085;
+  color: white;
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace; }
+
+.title {
+  font-size: 48px;
+  margin-left: 5vh; }
+
+.addExpense {
+  font-size: 56px; }
+
+.addExpense > a {
+  text-decoration: none;
+  color: white; }
+
+.addExpense > a:hover {
+  font-size: 86px;
+  color: #34495e; }
+
+.navigationLinks {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+  font-size: 16px;
+  margin-right: 2vh; }
+
+body {
+  background-color: white; }
+
+.expenseMainBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh; }
+
+.expenseBox {
+  height: 7vh;
+  width: 97vw;
+  background-color: #95a5a6;
+  margin-bottom: 0.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  border: solid 0.05em black;
+  font-size: 18px;
+  font-family: monospace; }
+
+.expenseName {
+  width: 10vw; }
+
+.expenseDate {
+  width: 10vw; }
+
+.expenseCreator {
+  width: 15vw; }
+
+.expenseSum {
+  width: 5vw; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh; }
+
+.overlay-left {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 40vw;
+  justify-content: center;
+  background-color: #ecf0f1; }
+
+.overlay-right {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 40vw;
+  justify-content: center;
+  background-color: #e67e22; }
 
 /*# sourceMappingURL=style.css.map */

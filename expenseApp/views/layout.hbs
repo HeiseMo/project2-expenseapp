@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Expense System</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+<div class="nav">
+  <div id="title" class="title">
+    <span>Expense App</span>
+  </div>
+  <div class="addExpense"><a href="/create-expense">+</a></div>
+  <div class="navigationLinks">
+    <li>Dashboard</li>
+    <li>Reports</li>
+    <li>FAQ</li>
+    <li>Settings</li>
+  </div>
+</div>
+
 <body>
-
-  {{{body}}}
-
-  <script src="/javascripts/script.js"></script>
+  {{{ body }}}
 </body>
+<script src="/javascripts/script.js"></script>
+<script>
+  document.getElementById('title').click(function () {
+    console.log("Click detected!!")
+  });
+
+  document.querySelector(".remove").click(function () {
+
+  });
+</script>
+
 </html>

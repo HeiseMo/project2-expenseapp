@@ -86,7 +86,7 @@ router.post('/login',
         passReqToCallback: true,
     }),
     function (req, res) {
-        res.redirect('/private-page');
+        res.redirect('/dashboard');
     });
 
 //Logout
@@ -94,12 +94,12 @@ router.post('/login',
 router.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/login");
-  });
+});
 
 //VIP AREA
 
-router.get('/private-page', ensureLogin.ensureLoggedIn(), (req, res) => {
-    res.render('auth/private', {
+router.get('/dashboard', ensureLogin.ensureLoggedIn(), (req, res) => {
+    res.render('auth/dashboard', {
         user: req.user
     });
 });
