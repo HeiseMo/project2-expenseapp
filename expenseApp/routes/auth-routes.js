@@ -89,6 +89,13 @@ router.post('/login',
         res.redirect('/private-page');
     });
 
+//Logout
+
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/login");
+  });
+
 //VIP AREA
 
 router.get('/private-page', ensureLogin.ensureLoggedIn(), (req, res) => {
