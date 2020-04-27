@@ -124,3 +124,5 @@ app.use('/', authRoutes);
 
 
 module.exports = app;
+
+app.listen(3000, () => console.log('This project is running on port 3000 '));

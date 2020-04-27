@@ -99,7 +99,7 @@ router.get("/logout", (req, res) => {
 //VIP AREA
 
 router.get('/private-page', ensureLogin.ensureLoggedIn(), (req, res) => {
-    res.render('auth/private', {
+    res.render('auth/dashboard', {
         user: req.user
     });
 });
