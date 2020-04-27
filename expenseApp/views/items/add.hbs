@@ -1,0 +1,16 @@
+<ul>
+    {{#each itemsData}}
+
+    <li>{{this.name}} - {{this.price}}</li>
+
+    {{/each}}
+</ul>
+
+<form action="/add-item" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name">
+    <label for="price">Price: </label>
+    <input type="number" name="price" id="price">
+
+    <button type="submit">Add an item</button>
+</form>
