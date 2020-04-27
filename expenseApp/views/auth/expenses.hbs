@@ -1,0 +1,29 @@
+<h2> Overview of Expenses </h2>
+<div>
+    {{#each expense}}
+    <ul>
+        <li>
+            <h3>{{expenseType}}</h3>
+            <p></p>
+            <!--<a href="/expenses/{{id}}">See detailed list of expense items</a> -->
+
+        </li>
+    </ul>
+
+    {{/each}}
+</div>
+
+
+<form action="/expenses" method="POST">
+    <label for="expenseType">Expense type</label>
+    <input id="expense-type" type="text" name="expenseType"></input>
+    <label for="expensePrice">Price</label>
+    <input id="expense-price" type="text" name="price"></input>
+    <label for="expensePurchaseDate">Purchase date</label>
+    <input id="expense-purchaseDate" type="text" name="purchaseDate"></input>
+    <label for="expense-description">Description</label>
+    <input id="expense-description" type="text" name="description"></input>
+    <label for="expense-items">Items</label>
+    <input id="expense-items" type="text" name="items"></input>
+    <button type="submit">Add expense</button>
+</form>
