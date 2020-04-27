@@ -63,7 +63,7 @@ router.post('/signup', (req, res, next) => {
                     password: hash
                 })
                 .then(userDB => {
-                    res.redirect('auth/login');
+                    res.redirect('/login');
                 })
                 .catch(err => {
                     next(err);
@@ -74,8 +74,10 @@ router.post('/signup', (req, res, next) => {
 
 //Login Stuff
 router.get('/login', (req, res, next) => {
-    res.render('auth/login', { message: req.flash('error') });
-  });
+    res.render('auth/login', {
+        message: req.flash('error')
+    });
+});
 
 router.post('/login',
     passport.authenticate('local', {
