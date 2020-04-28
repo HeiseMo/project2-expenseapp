@@ -6,7 +6,7 @@
 .nav {
   height: 10vh;
   width: 100vw;
-  background-color: white;
+  background-color: #001c6e;
   color: #777;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -17,7 +17,7 @@
   font-size: 48px;
   padding: 1vh;
   margin-left: 5vh;
-  color: #16a085; }
+  color: white; }
 
 .trigger {
   font-size: 56px; }
@@ -102,7 +102,8 @@ body {
   align-items: center;
   height: 10vh;
   width: 100%;
-  font-size: 48px; }
+  font-size: 48px;
+  color: #19b698; }
 
 .userBox {
   display: flex;
@@ -182,7 +183,8 @@ body {
   justify-content: center;
   background: #19b698;
   font-family: monospace;
-  align-items: center; }
+  align-items: center;
+  color: #001c6e; }
 
 .welcomeTitle {
   display: flex;
@@ -201,6 +203,9 @@ body {
   height: 10%;
   width: 90%;
   margin: 5vh; }
+
+.welcomeSignup a {
+  color: #001c6e; }
 
 .welcomeSignup button {
   width: 10vw;
@@ -222,7 +227,8 @@ a {
   text-decoration: none; }
 
 nav {
-  font-family: monospace; }
+  font-family: monospace;
+  margin-right: 5vw; }
 
 ul {
   background: darkorange;
