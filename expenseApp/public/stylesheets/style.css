@@ -11,7 +11,8 @@
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  border-bottom-left-radius: 50px; }
 
 .title {
   font-size: 48px;
@@ -46,24 +47,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  width: 90%;
-  margin: 5%;
+  height: 85vh;
+  width: 98%;
+  margin-top: 1%;
+  margin-left: 1%;
   background-color: white;
-  border-radius: 80px; }
+  border-radius: 40px; }
 
 .expenseBox {
-  height: 7vh;
-  width: 80%;
+  height: 5vh;
+  width: 70%;
   background-color: white;
   margin-bottom: 0.5vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   color: #001c6e;
-  border-bottom: solid 0.05em #adadad;
+  border-bottom: solid 0.05em #d4d4d4;
   font-size: 18px;
-  font-family: monospace; }
+  font-family: monospace;
+  margin-right: 1%; }
 
 .expenseBox:hover {
   border-top: solid 25px white;
@@ -102,7 +105,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ecf0f1;
-  font-family: monospace; }
+  font-family: monospace;
+  border-radius: 40px; }
 
 .loginTitle {
   display: flex;
