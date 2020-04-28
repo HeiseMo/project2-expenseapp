@@ -1,19 +1,32 @@
-<div class="exenseMainBox">
-{{#each expense}}
-<div class="expenseBox">
-    <div class="receiptName">
-        <p>{{name}}</p>
-    </div>
-    <div class="expenseDate">
-        <p>{{date}}</p>
-    </div>
-    <div class="expenseCreator">
-        <p>{{creator}}</p>
-    </div>
-    <div class="expenseSum">
-        <p>{{sum}}</p>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>Hello, I am a modal!</h1>
+        <form action="/dashboard" method="POST">
+            <input id="expense-type" type="text" name="expenseType" placeholder="Expense Type..."></input>
+            <input id="expense-price" type="text" name="price" placeholder="Price..."></input>
+            <input id="expense-purchaseDate" type="text" name="purchaseDate" placeholder="Date..."></input>
+            <input id="expense-description" type="text" name="description" placeholder="Description..."></input>
+            <button type="submit">Add expense</button>
+        </form>
     </div>
 </div>
-{{/each}}
+<div class="expenseMainBox">
+    {{#each expense}}
+    <div class="expenseBox">
+        <div class="expenseName">
+            <p>{{expenseType}}</p>
+        </div>
+        <div class="expenseDate">
+            <p>{{purchaseDate}}</p>
+        </div>
+        <div class="expenseCreator">
+            <p>{{description}}</p>
+        </div>
+        <div class="expenseSum">
+            <p>{{price}}</p>
+        </div>
+    </div>
+    {{/each}}
 </div>
-    <a href="/logout">Logout</a>
+<a href="/logout">Logout</a>

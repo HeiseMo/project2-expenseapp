@@ -3,12 +3,12 @@ const router = express.Router();
 
 const Expense = require("../models/Expense");
 
-router.get("/expenses", (req, res, next) => {
+router.get("/dashboard", (req, res, next) => {
   Expense.find()
     .then((expenseData) => {
       console.log("Retrieved expense from DB:", expenseData);
 
-      res.render("auth/expenses", { expense: expenseData });
+      res.render("auth/dashboard", { expense: expenseData });
     })
     .catch((err) => {
       console.log("Error retrieving expenses from DB", err);
@@ -17,7 +17,7 @@ router.get("/expenses", (req, res, next) => {
 });
 
 //add expenses
-router.post("/expenses", (req, res) => {
+router.post("/dashboard", (req, res) => {
   const {
     expenseType,
     createdDate,
@@ -40,12 +40,12 @@ router.post("/expenses", (req, res) => {
     .save()
     .then((expense) => {
       console.log(expense);
-      res.redirect("/expenses");
+      res.redirect("/dashboard");
     })
     .catch((err) => {
       console.log("Error creating new expense", err);
       //res.send("New expense created", req.body);
-      res.render("auth/expenses");
+      res.render("auth/dashboard");
     });
 });
 

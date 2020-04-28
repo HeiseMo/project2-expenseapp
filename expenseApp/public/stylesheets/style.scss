@@ -6,9 +6,9 @@
 .nav {
   height: 10vh;
   width: 100vw;
-  background-color: #16a085;
-  color: white;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.7);
+  background-color: white;
+  color: #777;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,19 +17,24 @@
 
 .title {
   font-size: 48px;
+  padding: 1vh;
   margin-left: 5vh;
+  color: #16a085;
+  // border: 0.025em solid black;
+  // border-radius: 50px;
+  // background-color:#16a085;
 }
 
-.addExpense {
+.trigger {
   font-size: 56px;
 }
 
-.addExpense>a {
+.trigger>a {
   text-decoration: none;
-  color: white;
+  color: #777;
 }
 
-.addExpense>a:hover {
+.trigger>a:hover {
   font-size: 86px;
   color: #34495e;
 }
@@ -44,7 +49,8 @@
 }
 
 body {
-  background-color: white;
+  //background-color: white;
+  background-color: #16a085;
 }
 
 .expenseMainBox {
@@ -71,14 +77,17 @@ body {
 
 .expenseName {
   width: 10vw;
+  display: flex;
 }
 
 .expenseDate {
   width: 10vw;
+  display: flex;
+  justify-content: start;
 }
 
 .expenseCreator {
-  width: 15vw;
+  width: 10vw;
 }
 
 .expenseSum {
@@ -113,4 +122,47 @@ body {
   justify-content: center;
   background-color: #e67e22;
 
+}
+
+//Modal View
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-button:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }

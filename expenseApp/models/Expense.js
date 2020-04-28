@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
   expenseType: String, //dropdown menu with options
-  price: Number,
+  price: String,
   createdDate: String,
-  purchaseDate: Date,
+  purchaseDate: String,
   description: String,
   items: Array,
 });
