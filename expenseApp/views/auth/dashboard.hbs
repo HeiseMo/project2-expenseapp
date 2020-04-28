@@ -13,6 +13,21 @@
     </div>
 </div>
 <div class="expenseMainBox">
+        <div class="expenseBox" style="color: #19b698;">
+        <div class="expenseName">
+            <p>Expense Type</p>
+        </div>
+        <div class="expenseDate">
+            <p>Purchase Date</p>
+        </div>
+        <div class="expenseCreator">
+            <p>Description</p>
+        </div>
+        <div class="expenseSum">
+            <p>Sum</p>
+        </div>
+
+    </div>
     {{#each expense}}
     <div class="expenseBox">
         <div class="expenseName">
@@ -32,5 +47,4 @@
     </div>
     {{/each}}
 </div>
-<a href="/logout">Logout</a>
 <script src="/javascripts/dashboard.js"></script>

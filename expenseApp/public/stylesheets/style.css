@@ -6,7 +6,7 @@
 .nav {
   height: 10vh;
   width: 100vw;
-  background-color: #001c6e;
+  background-color: #00103c;
   color: #777;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -24,11 +24,11 @@
 
 .trigger > a {
   text-decoration: none;
-  color: #777; }
+  color: white; }
 
 .trigger > a:hover {
   font-size: 86px;
-  color: #34495e; }
+  color: #19b698; }
 
 .navigationLinks {
   list-style: none;
@@ -46,20 +46,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2vh; }
+  height: 70vh;
+  width: 90%;
+  margin: 5%;
+  background-color: white;
+  border-radius: 80px; }
 
 .expenseBox {
   height: 7vh;
-  width: 97vw;
-  background-color: #95a5a6;
+  width: 80%;
+  background-color: white;
   margin-bottom: 0.5vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: white;
-  border: solid 0.05em black;
+  color: #001c6e;
+  border-bottom: solid 0.05em #adadad;
   font-size: 18px;
   font-family: monospace; }
+
+.expenseBox:hover {
+  border-top: solid 25px white;
+  border-radius: 100px;
+  transition: ease 1s; }
 
 .expenseName {
   width: 10vw;
@@ -234,7 +243,8 @@ ul {
   background: darkorange;
   list-style: none;
   margin: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  font-size: 18px; }
 
 li {
   color: #16a085;
@@ -250,14 +260,14 @@ li a {
 
 li:hover,
 li:focus-within {
-  background: red;
+  background: #001c6e;
   cursor: pointer; }
 
 li:focus-within a {
   outline: none; }
 
 ul li ul {
-  background: orange;
+  background: #00103c;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
