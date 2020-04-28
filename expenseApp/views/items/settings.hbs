@@ -1,19 +1,17 @@
 <link rel="stylesheet" href="/stylesheets/settings-styles.css">
-
-<h1>Settings</h1>
-
+<link rel="stylesheet" href="/stylesheets/style.css">
 <div id="settings-container">
-
-    <form action="/settings" method="POST">
-        <label for="cars">Choose currency:</label>
-        <select id="cars" name="cars">
+    <h1>Settings</h1>
+    <form id="currency-form" action="/settings" method="POST">
+        <label for="currency">Choose currency:</label>
+        <select id="currency-dropdown" name="currency">
             <option value="USdollar">US Dollar</option>
             <option value="AUSdollar">Australian Dollar</option>
             <option value="eur">Euro</option>
             <option value="rupiah">Indonesian Rupiah</option>
             <option value="jp-yen">Japanese Yen</option>
         </select>
-        <input type="submit">
+        <button class="styled-btn" type="submit">Select</button>
     </form>
 
 </div>
