@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: monospace;
 }
 
 .nav {
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: monospace;
 }
 
 .title {
@@ -255,4 +255,62 @@ ul li ul li {
   visibility: visible;
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.styled-btn {
+  padding: 1% 2%;
+  margin: 5% 5%;
+  background-color: #16a085;
+  border: solid;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.styled-btn:hover {
+  background-color: #fff;
+  color: #16a085;
+}
+
+#faq-container {
+  color: white;
+  text-align: center;
+  width: 80%;
+  margin: 0% 10%;
+}
+
+#faq-container h1 {
+  font-size: 54px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#faq-info > h2 {
+  font-size: 34px;
+  margin-top: 8%;
+  margin-bottom: 2%;
+}
+
+#faq-info > p {
+  font-size: 24px;
+  margin-bottom: 8%;
+}
+
+#signup {
+  font-size: 24px;
+  color: white;
+  margin-top: 5%;
+}
+
+.styled-btn > a {
+  color: white;
+}
+
+.styled-btn:hover > a {
+  background-color: #fff;
+  color: #16a085;
 }
