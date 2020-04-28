@@ -49,4 +49,8 @@ router.post("/expenses", (req, res) => {
     });
 });
 
+router.get("/expenses/daily", (req, res) => {
+  res.render("expenses/daily");
+});
+
 module.exports = router;
