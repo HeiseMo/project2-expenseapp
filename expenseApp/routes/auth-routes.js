@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const flash = require("connect-flash");
+const Expense = require("../models/Expense");
 
 // User model
 const User = require("../models/User");
@@ -95,8 +96,15 @@ router.get("/logout", (req, res) => {
 //VIP AREA
 
 router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("auth/dashboard", {
-    user: req.user,
+  Expense.find()
+  .then((expenseData) => {
+    console.log("Retrieved expense from DB:", expenseData);
+
+    res.render("auth/dashboard", { expense: expenseData });
+  })
+  .catch((err) => {
+    console.log("Error retrieving expenses from DB", err);
+    next();
   });
 });
 
