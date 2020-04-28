@@ -5,7 +5,7 @@
         <form action="/dashboard" method="POST">
             <input id="expense-type" type="text" name="expenseType" placeholder="Expense Type..."></input>
             <input id="expense-price" type="text" name="price" placeholder="Price..."></input>
-            <input id="expense-purchaseDate" type="text" name="purchaseDate" placeholder="Date..."></input>
+            <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..."></input>
             <input id="expense-description" type="text" name="description" placeholder="Description..."></input>
             <button type="submit">Add expense</button>
         </form>
@@ -15,10 +15,11 @@
     {{#each expense}}
     <div class="expenseBox">
         <div class="expenseName">
+
             <p>{{expenseType}}</p>
         </div>
         <div class="expenseDate">
-            <p>{{purchaseDate}}</p>
+            <p>{{formatDate purchaseDate}}</p>
         </div>
         <div class="expenseCreator">
             <p>{{description}}</p>
@@ -31,3 +32,4 @@
     {{/each}}
 </div>
 <a href="/logout">Logout</a>
+<script src="/javascripts/dashboard.js"></script>

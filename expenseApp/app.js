@@ -11,6 +11,13 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 
+// handlebar helpers
+
+hbs.handlebars.registerHelper("formatDate", function (date) {
+  const formattedDate = date.toString().slice(3, 16);
+  return formattedDate;
+});
+
 //Session Stuff
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);

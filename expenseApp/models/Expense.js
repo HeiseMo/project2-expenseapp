@@ -6,7 +6,8 @@ const expenseSchema = new Schema({
   price: String,
   createdDate: String,
   purchaseCurrency: String,
-  purchaseDate: String,
+  purchaseDate: { type: Date, default: Date.now },
+  //purchaseDate: { type: String, default: new Date(Date.now()).toString() },
   description: String,
   items: Array,
 });

@@ -29,12 +29,12 @@
   font-size: 56px;
 }
 
-.trigger > a {
+.trigger>a {
   text-decoration: none;
   color: #777;
 }
 
-.trigger > a:hover {
+.trigger>a:hover {
   font-size: 86px;
   color: #34495e;
 }
@@ -190,34 +190,32 @@ body {
   transition: 0.5s;
   color: white;
   background-position: right;
-  background: #085078; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #85d8ce,
-    #085078
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #85d8ce,
-    #085078
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #085078;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #85d8ce,
+      #085078);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #85d8ce,
+      #085078);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   transition: ease-in 5s;
   font-size: 24px;
 }
 
 .submitBtn button:hover {
-  background: #85d8ce; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #085078,
-    #85d8ce
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #085078,
-    #85d8ce
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #85d8ce;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #085078,
+      #85d8ce);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #085078,
+      #85d8ce);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   color: white;
 }
@@ -322,8 +320,8 @@ ul li ul {
   display: none;
 }
 
-ul li:hover > ul,
-ul li:focus-within > ul,
+ul li:hover>ul,
+ul li:focus-within>ul,
 ul li ul:hover,
 ul li ul:focus {
   visibility: visible;
@@ -336,9 +334,11 @@ ul li ul li {
   width: 100%;
 }
 
+//daily-page
+//overall-flex-container for 2 sub-containers
 .split-page {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .daily-table {
@@ -353,13 +353,43 @@ ul li ul li {
   border: 1px solid #c0c0c0;
 }
 
+//1st sub-container
 .flex-daily {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.flex-daily > div {
+
+.flex-daily>div {
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 50px 0px;
+}
+
+//2nd sub-container
+.chart-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-area {
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  margin: 50px 0px;
+}
+
+.expense-area {
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
   margin: 50px 0px;
 }
 
@@ -442,13 +472,13 @@ ul li ul li {
   margin-bottom: 5%;
 }
 
-#faq-info > h2 {
+#faq-info>h2 {
   font-size: 34px;
   margin-top: 8%;
   margin-bottom: 2%;
 }
 
-#faq-info > p {
+#faq-info>p {
   font-size: 24px;
   margin-bottom: 8%;
 }
@@ -459,11 +489,11 @@ ul li ul li {
   margin-top: 5%;
 }
 
-.styled-btn > a {
+.styled-btn>a {
   color: white;
 }
 
-.styled-btn:hover > a {
+.styled-btn:hover>a {
   background-color: #fff;
   color: #16a085;
 }
