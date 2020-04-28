@@ -114,7 +114,7 @@ ul {
   padding-left: 0; }
 
 li {
-  color: #fff;
+  color: #16a085;
   display: block;
   float: left;
   padding: 1rem;
@@ -123,7 +123,7 @@ li {
   transition-duration: 0.5s; }
 
 li a {
-  color: #fff; }
+  color: #16a085; }
 
 li:hover,
 li:focus-within {
@@ -161,13 +161,13 @@ ul li ul li {
   justify-content: space-between; }
 
 .daily-table {
-  border: 1px solid #C0C0C0; }
+  border: 1px solid #c0c0c0; }
 
 .daily-table th {
-  border: 1px solid #C0C0C0; }
+  border: 1px solid #c0c0c0; }
 
 .daily-table td {
-  border: 1px solid #C0C0C0; }
+  border: 1px solid #c0c0c0; }
 
 .flex-daily {
   display: flex;
@@ -176,6 +176,7 @@ ul li ul li {
 
 .flex-daily > div {
   margin: 50px 0px; }
+
 .modal {
   position: fixed;
   left: 0;

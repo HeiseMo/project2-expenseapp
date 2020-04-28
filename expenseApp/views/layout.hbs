@@ -10,15 +10,10 @@
     <span>Expense App</span>
   </div>
   <div class="trigger"><a>+</a></div>
-  <div class="navigationLinks">
-    <li>Dashboard</li>
-    <li>Reports</li>
-    <li>FAQ</li>
-    <li>Settings</li>
-  </div> --}}
+
   <nav role="navigation">
     <ul>
-      <li><a href="#">Dashboard</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
       <li><a href="#" aria-haspopup="true">Reports</a>
         <ul class="dropdown" aria-label="submenu">
           <li><a href="/expenses/daily">Daily</a></li>
@@ -26,8 +21,8 @@
           <li><a href="#">Yearly</a></li>
         </ul>
       </li>
-      <li><a href="#">Settings</a></li>
-      <li><a href="#">FAQs</a></li>
+      <li><a href="/settings">Settings</a></li>
+      <li><a href="/faq">FAQs</a></li>
     </ul>
   </nav>
 </div>
@@ -36,4 +31,5 @@
   {{{ body }}}
 </body>
 <script src="/javascripts/script.js"></script>
+
 </html>

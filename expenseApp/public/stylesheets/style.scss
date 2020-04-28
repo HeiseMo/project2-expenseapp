@@ -29,12 +29,12 @@
   font-size: 56px;
 }
 
-.trigger>a {
+.trigger > a {
   text-decoration: none;
   color: #777;
 }
 
-.trigger>a:hover {
+.trigger > a:hover {
   font-size: 86px;
   color: #34495e;
 }
@@ -111,7 +111,6 @@ body {
   width: 40vw;
   justify-content: center;
   background-color: #ecf0f1;
-
 }
 
 .overlay-right {
@@ -121,7 +120,6 @@ body {
   width: 40vw;
   justify-content: center;
   background-color: #e67e22;
-
 }
 
 a {
@@ -140,7 +138,7 @@ ul {
 }
 
 li {
-  color: #fff;
+  color: #16a085;
   display: block;
   float: left;
   padding: 1rem;
@@ -150,7 +148,7 @@ li {
 }
 
 li a {
-  color: #fff;
+  color: #16a085;
 }
 
 li:hover,
@@ -175,8 +173,8 @@ ul li ul {
   display: none;
 }
 
-ul li:hover>ul,
-ul li:focus-within>ul,
+ul li:hover > ul,
+ul li:focus-within > ul,
 ul li ul:hover,
 ul li ul:focus {
   visibility: visible;
@@ -195,15 +193,15 @@ ul li ul li {
 }
 
 .daily-table {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
 }
 
 .daily-table th {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
 }
 
 .daily-table td {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
 }
 
 .flex-daily {
@@ -212,8 +210,10 @@ ul li ul li {
   justify-content: space-between;
 }
 
-.flex-daily>div {
+.flex-daily > div {
   margin: 50px 0px;
+}
+
 //Modal View
 
 .modal {
@@ -253,6 +253,6 @@ ul li ul li {
 .show-modal {
   opacity: 1;
   visibility: visible;
-  transform: scale(1.0);
+  transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
