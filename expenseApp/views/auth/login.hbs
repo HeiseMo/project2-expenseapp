@@ -1,23 +1,43 @@
 <div class="container">
   <div class="overlay-left">
+    <div class="loginTitle">
       <h2>Login</h2>
-    
-    <form action="/login" method="post">
-      <label for="">Username:</label>
-      <input type="text" name="username">
-
-      <label for="">Password:</label>
-      <input type="password" name="password">
-
-      <button type="submit">Login</button>
-    </form>
-    {{#if message}}
-        <p style="color: red">{{message}}</p>
-    {{/if}}
+    </div>
+    <div class="userBox">
+      <form action="/login" method="post">
+        <div class="inputBox">
+          <input placeholder="Username" type="text" name="username">
+          <span data-placeholder="Username"></span>
+        </div>
+        <div class="inputBox">
+          <input placeholder="Password" type="password" name="password">
+          <span data-placeholder="Password"></span>
+        </div>
+        <div class="submitBtn">
+            <button type="submit">Login</button>
+        </div>
+      </form>
+      {{#if message}}
+      <p style="color: red">{{message}}</p>
+      {{/if}}
+    </div>
   </div>
   <div class="overlay-right">
-    		<h1>Hello, Friend!</h1>
-				<p>Expense App is dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+    <div class="welcomeTitle">    
+      <h1>Hello, Friend!</h1>
+    </div>
+    <div class="welcomeContent">
+<p>Expense App is dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="welcomeSignup">
+    <button class="ghost" id="signUp"><a href="signup">Sign Up</a></button>
+    </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+</script>
