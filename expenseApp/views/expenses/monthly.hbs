@@ -1,8 +1,9 @@
 <div class="split-page">
     <div class="flex-daily">
         <div>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" value="2020-04-28">
+            <label for="month">Start month:</label>
+
+            <input type="month" id="month" name="month" value="2020-04">
         </div>
         <div>
             <h3>Total Money Spent:</h3>
@@ -33,10 +34,7 @@
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
         <div class="expense-area">
+            <h1>overview of expenses</h1>
         </div>
     </div>
 </div>
-<script>
-    var expenseObject = {{{ expenseString }}}
-</script>
-<script src="/javascripts/daily.js"></script>

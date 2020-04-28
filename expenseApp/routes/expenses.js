@@ -8,7 +8,9 @@ router.get("/dashboard", (req, res, next) => {
     .then((expenseData) => {
       console.log("Retrieved expense from DB:", expenseData);
 
-      res.render("auth/dashboard", { expense: expenseData });
+      res.render("auth/dashboard", {
+        expense: expenseData,
+      });
     })
     .catch((err) => {
       console.log("Error retrieving expenses from DB", err);
@@ -50,7 +52,25 @@ router.post("/dashboard", (req, res) => {
 });
 
 router.get("/expenses/daily", (req, res) => {
-  res.render("expenses/daily");
+  Expense.find()
+    .then((expenseData) => {
+      console.log("Retrieved expense from DB:", expenseData);
+
+      res.render("expenses/daily", {
+        expense: expenseData,
+        expenseString: JSON.stringify(expenseData),
+      });
+    })
+    .catch((err) => {
+      console.log("Error retrieving expenses from DB", err);
+      next();
+    });
+});
+router.get("/expenses/monthly", (req, res) => {
+  res.render("expenses/monthly");
+});
+router.get("/expenses/yearly", (req, res) => {
+  res.render("expenses/yearly");
 });
 
 module.exports = router;
