@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: monospace;
 }
 
 .nav {
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: monospace;
 }
 
 .title {
@@ -29,12 +29,12 @@
   font-size: 56px;
 }
 
-.trigger>a {
+.trigger > a {
   text-decoration: none;
   color: #777;
 }
 
-.trigger>a:hover {
+.trigger > a:hover {
   font-size: 86px;
   color: #34495e;
 }
@@ -54,7 +54,6 @@ body {
   // background: #134E5E;  /* fallback for old browsers */
   // background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .expenseMainBox {
@@ -188,25 +187,40 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   color: white;
   background-position: right;
-  background: #085078;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #85D8CE, #085078);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #85D8CE, #085078); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #085078; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #85d8ce,
+    #085078
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #85d8ce,
+    #085078
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   transition: ease-in 5s;
   font-size: 24px;
 }
 
 .submitBtn button:hover {
-  background: #85D8CE;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #085078, #85D8CE);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #085078, #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #85d8ce; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #085078,
+    #85d8ce
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #085078,
+    #85d8ce
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
 }
-
 
 .overlay-right {
   display: flex;
@@ -241,18 +255,18 @@ body {
 
 .welcomeSignup button {
   width: 10vw;
-  height: 3vh;;
+  height: 3vh;
   border: none;
   outline: none;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   color: black;
   background-color: white;
   font-size: 16px;
   border-radius: 5vh;
 }
 
-.welcomeSignup button:hover{
+.welcomeSignup button:hover {
   border: 2px solid;
   transition: 1s;
 }
@@ -308,8 +322,8 @@ ul li ul {
   display: none;
 }
 
-ul li:hover>ul,
-ul li:focus-within>ul,
+ul li:hover > ul,
+ul li:focus-within > ul,
 ul li ul:hover,
 ul li ul:focus {
   visibility: visible;
@@ -345,7 +359,7 @@ ul li ul li {
   justify-content: space-between;
 }
 
-.flex-daily>div {
+.flex-daily > div {
   margin: 50px 0px;
 }
 
@@ -394,4 +408,62 @@ ul li ul li {
   visibility: visible;
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.styled-btn {
+  padding: 1% 2%;
+  margin: 5% 5%;
+  background-color: #16a085;
+  border: solid;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.styled-btn:hover {
+  background-color: #fff;
+  color: #16a085;
+}
+
+#faq-container {
+  color: white;
+  text-align: center;
+  width: 80%;
+  margin: 0% 10%;
+}
+
+#faq-container h1 {
+  font-size: 54px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#faq-info > h2 {
+  font-size: 34px;
+  margin-top: 8%;
+  margin-bottom: 2%;
+}
+
+#faq-info > p {
+  font-size: 24px;
+  margin-bottom: 8%;
+}
+
+#signup {
+  font-size: 24px;
+  color: white;
+  margin-top: 5%;
+}
+
+.styled-btn > a {
+  color: white;
+}
+
+.styled-btn:hover > a {
+  background-color: #fff;
+  color: #16a085;
 }

@@ -1,0 +1,19 @@
+#settings-container {
+  padding: 10%;
+  color: white;
+  font-family: monospace;
+  font-size: 32px;
+  text-align: center;
+}
+
+.currency-form {
+  padding: 5%;
+  margin: 5%;
+}
+
+.currency-dropdown {
+  font-size: 24px;
+  margin: 5%;
+  padding: 1% 2%;
+  color: #777;
+}

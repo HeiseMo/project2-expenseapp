@@ -5,6 +5,7 @@ const expenseSchema = new Schema({
   expenseType: String, //dropdown menu with options
   price: String,
   createdDate: String,
+  purchaseCurrency: String,
   purchaseDate: String,
   description: String,
   items: Array,

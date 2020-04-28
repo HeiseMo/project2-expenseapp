@@ -1,21 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    console.log('IronGenerator JS imported successfully!');
-
-}, false);
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    console.log("IronGenerator JS imported successfully!");
+  },
+  false
+);
 
 var modal = document.querySelector(".modal");
 var trigger = document.querySelector(".trigger");
 var closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
-    modal.classList.toggle("show-modal");
+  modal.classList.toggle("show-modal");
 }
 
 function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
+  if (event.target === modal) {
+    toggleModal();
+  }
 }
 
 trigger.addEventListener("click", toggleModal);

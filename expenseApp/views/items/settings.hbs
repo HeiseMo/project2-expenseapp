@@ -1,19 +1,55 @@
 <link rel="stylesheet" href="/stylesheets/settings-styles.css">
 
-<h1>Settings</h1>
-
 <div id="settings-container">
-
-    <form action="/settings" method="POST">
-        <label for="cars">Choose currency:</label>
-        <select id="cars" name="cars">
-            <option value="USdollar">US Dollar</option>
-            <option value="AUSdollar">Australian Dollar</option>
-            <option value="eur">Euro</option>
-            <option value="rupiah">Indonesian Rupiah</option>
-            <option value="jp-yen">Japanese Yen</option>
+    <h1>Settings</h1>
+    <form class="currency-form" action="/settings" method="POST">
+        <label for="currency">Choose a currency:</label>
+        <select class="currency-dropdown" id="selected-currency" name="currency">
+            <option value="EUR">Euro</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="RUPIAH">Indonesian Rupiah</option>
+            <option value="YEN">Japanese Yen</option>
+            <option value="USD">US Dollar</option>
         </select>
-        <input type="submit">
+        <button class="styled-btn currency-btn">Select</button>
     </form>
 
+    <div class="currency-container">
+        <div class="container-calculator">
+            <h2>Currency Calculator</h2>
+
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <input type="number" class="form-control" id="amount" />
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <select class="form-control" id="currency-1" required>
+                        <option>AUD</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label>convert to</label>
+                    <select class="form-control" id="currency-2" required>
+                        <option>AUD</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+                <button class="btn calculate-btn btn-primary mb-2">Result</button>
+            </form>
+            <div class="result">
+                <p>
+                    <span class="given-amount"></span>
+                    <span class="base-currency"></span>
+                    <span class="final-result"></span>
+                    <span class="second-currency"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script src="/javascripts/currency.js"></script>
