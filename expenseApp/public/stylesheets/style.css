@@ -479,6 +479,7 @@ ul li ul li {
   color: #f1f1f1;
   background-color: #001c6e;
   padding: 10px 20px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  box-shadow: 5px 15px 15px 2px; }
 
 /*# sourceMappingURL=style.css.map */
