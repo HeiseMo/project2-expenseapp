@@ -3,9 +3,6 @@
   padding: 0;
   font-family: monospace; }
 
-html body {
-  height: 100%; }
-
 .main {
   display: flex;
   flex-direction: column;
@@ -20,6 +17,34 @@ html body {
   border-radius: 40px; }
 
 .nav {
+  transition: 1s;
+  height: 10vh;
+  margin-top: -7.5vh;
+  width: 100%;
+  background-color: #00103c;
+  color: #777;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; }
+
+.nav:hover {
+  height: 10vh;
+  margin-top: 0vh;
+  transition: 1s;
+  width: 100%;
+  background-color: #00103c;
+  color: #777;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; }
+
+.nav-public {
   height: 10vh;
   width: 100%;
   background-color: #00103c;
@@ -28,10 +53,11 @@ html body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom-left-radius: 50px; }
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; }
 
 .title {
-  font-size: 48px;
+  font-size: 40px;
   padding: 1vh;
   margin-left: 5vh;
   color: white; }
@@ -56,6 +82,12 @@ html body {
   margin-right: 2vh; }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
   background-color: #19b698; }
 
 .expenseMainBox {
@@ -96,16 +128,13 @@ body {
 .expenseDate {
   width: 10vw;
   display: flex;
-  justify-content: start;
-  text-align: center; }
+  justify-content: start; }
 
 .expenseCreator {
-  width: 10vw;
-  text-align: center; }
+  width: 10vw; }
 
 .expenseSum {
-  width: 5vw;
-  text-align: center; }
+  width: 5vw; }
 
 .container {
   display: flex;
@@ -155,7 +184,7 @@ body {
   border-bottom: 2px solid #adadad; }
 
 .inputBox input {
-  font-size: 20px;
+  font-size: 16px;
   color: #333;
   border: none;
   outline: none;
@@ -271,9 +300,7 @@ body {
   align-items: flex-start; }
 
 .reportInfo {
-  border-bottom: solid 0.025em #d4d4d4;
-  border-top: solid 0.025em #d4d4d4;
-  height: 5vh;
+  height: 3vh;
   width: 98%;
   display: flex;
   align-items: center;
@@ -290,7 +317,7 @@ body {
 .reportWrapperSmall {
   background-color: #19b698;
   height: 10%;
-  width: 35vw;
+  width: 40vw;
   border-radius: 50px;
   color: white;
   display: flex;
@@ -301,8 +328,8 @@ body {
 
 .reportWrapperBig {
   background-color: #19b698;
-  height: 15%;
-  width: 35vw;
+  height: 10%;
+  width: 40vw;
   border-radius: 50px;
   color: white;
   display: flex;
@@ -312,7 +339,7 @@ body {
   margin-bottom: 5vh; }
 
 .reportWrapperSmall span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600; }
 
 .reportWrapperBig span {
@@ -326,7 +353,7 @@ body {
 
 .datePicker input {
   font-size: 18px;
-  width: 8vw;
+  width: 12vw;
   border: none;
   outline: none;
   background: none;
@@ -346,6 +373,7 @@ body {
   padding: 1%;
   background-color: #16a085;
   border: solid;
+  border-radius: 20px;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -442,14 +470,16 @@ ul li ul li {
 
 .chart-section {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 45vw;
+  height: auto; }
 
 .chart-area {
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 5px;
   text-align: center;
-  margin: 50px 0px; }
+  margin: 20px 0px; }
 
 .expense-area {
   box-sizing: border-box;
@@ -473,30 +503,22 @@ ul li ul li {
 
 .modal-content {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 1rem 1.5rem;
-  width: 50%;
-  height: 60%;
+  width: 24rem;
   border-radius: 0.5rem; }
 
-.modal h1 {
-  margin-top: 8%;
-  color: #333;
-  font-size: 42px;
-  text-align: center; }
-
 .close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  transition: all 200ms;
-  font-size: 40px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333; }
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray; }
 
 .close-button:hover {
   background-color: darkgray; }
@@ -507,125 +529,22 @@ ul li ul li {
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; }
 
-#add-expense-form {
-  margin: 10% auto 0 auto;
-  padding: 30px;
-  width: 60%;
-  height: auto;
-  overflow: hidden;
-  background: white;
-  border-radius: 10px; }
-
-#add-expense-form > input {
-  margin: 10px 0;
-  padding: 15px 10px;
-  width: 100%;
-  outline: none;
-  border: 1px solid #bbb;
-  border-radius: 20px;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  border-radius: 20px; }
-
-#add-expense-form > input[type="submit"]:hover {
-  opacity: 0.8; }
-
-#add-expense-form > input[type="submit"]:active {
-  opacity: 0.4; }
-
-.show-calc-btn {
-  margin: 5%;
-  float: left;
-  clear: left;
-  display: inline-block;
-  color: cornflowerblue;
-  text-decoration: none; }
-
-.styled-add-btn {
-  font-size: 18px;
-  padding: 15px 50px;
-  width: auto;
-  background: #1abc9c;
-  border: none;
+.styled-btn {
+  padding: 1% 2%;
+  margin: 5% 5%;
+  background-color: #16a085;
+  border: solid;
   color: white;
-  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
-  float: right;
-  clear: right;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  border-radius: 20px; }
+  font-size: 22px;
+  transition-duration: 0.4s;
+  cursor: pointer; }
 
-.styled-add-btn:hover {
+.styled-btn:hover {
   background-color: #fff;
-  color: #16a085;
-  border: solid; }
-
-.currency-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5%; }
-
-.container-calculator {
-  visibility: hidden;
-  transform: scale(1.1);
-  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-  padding-bottom: 0; }
-
-.form-group {
-  display: flex;
-  justify-content: flex-end; }
-
-.form-control {
-  padding: 5px 5px;
-  outline: none;
-  border: 1px solid #bbb;
-  border-radius: 20px;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  border-radius: 20px;
-  margin: 2px; }
-
-.calculate-btn {
-  padding: 5%;
-  margin: 5%;
-  width: auto;
-  background: #1abc9c;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  clear: right;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  border-radius: 20px; }
-
-.reveal-calc {
-  visibility: visible;
-  transform: scale(1);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; }
+  color: #16a085; }
 
 #faq-container {
   color: #16a085;
@@ -658,41 +577,5 @@ ul li ul li {
 .styled-btn:hover > a {
   background-color: #fff;
   color: #16a085; }
-
-.edit-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 60%;
-  width: 60%;
-  text-align: center;
-  background-color: #f1f1f1;
-  margin: 50px 0px;
-  margin: auto;
-  flex-direction: column; }
-
-.edit-form label {
-  text-align: center;
-  margin: 20px auto;
-  display: block; }
-
-.edit-form button {
-  text-align: center;
-  margin: 20px auto;
-  display: block;
-  font-size: 10px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  color: #f1f1f1;
-  background-color: #001c6e;
-  box-shadow: 5px 15px 15px 2px; }
-
-.expenseBox button {
-  color: #f1f1f1;
-  background-color: #001c6e;
-  padding: 10px 20px;
-  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
