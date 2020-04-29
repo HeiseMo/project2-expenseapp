@@ -4,6 +4,10 @@
   font-family: monospace;
 }
 
+html body {
+  height: 100%;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -82,6 +86,7 @@ body {
   margin-left: 1%;
   background-color: white;
   border-radius: 40px;
+  //text-align: center;
 }
 
 .expenseBox {
@@ -97,6 +102,7 @@ body {
   font-size: 18px;
   font-family: monospace;
   margin-right: 1%;
+  //text-align: center;
 }
 
 .expenseBox:hover {
@@ -108,20 +114,24 @@ body {
 .expenseName {
   width: 10vw;
   display: flex;
+  //text-align: center;
 }
 
 .expenseDate {
   width: 10vw;
   display: flex;
   justify-content: start;
+  text-align: center;
 }
 
 .expenseCreator {
   width: 10vw;
+  text-align: center;
 }
 
 .expenseSum {
   width: 5vw;
+  text-align: center;
 }
 
 .container {
@@ -648,4 +658,46 @@ ul li ul li {
 .styled-btn:hover>a {
   background-color: #fff;
   color: #16a085;
+}
+
+.edit-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  height: 60%;
+  width: 60%;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 50px 0px;
+  margin: auto;
+  flex-direction: column;
+}
+
+.edit-form label {
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+
+.edit-form button {
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #f1f1f1;
+  background-color: #001c6e;
+  box-shadow: 5px 15px 15px 2px;
+}
+
+.expenseBox button {
+  color: #f1f1f1;
+  background-color: #001c6e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 15px 15px 2px;
 }

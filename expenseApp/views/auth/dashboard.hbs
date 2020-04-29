@@ -28,6 +28,12 @@
         <div class="expenseSum">
             <p>Sum</p>
         </div>
+        <div class="expenseSum">
+            <p style="visibility: hidden">Edit</p>
+        </div>
+        <div class="expenseSum">
+            <p style="visibility: hidden;">Delete</p>
+        </div>
 
     </div>
     {{#each expense}}
@@ -44,6 +50,10 @@
         <div class="expenseSum">
             <p>{{price}}</p>
         </div>
+        <a href="/dashboard/{{_id}}/edit"><button>Edit</button></a>
+        <form action="/dashboard/{{_id}}/delete" method="POST">
+            <button type="submit" name="{{_id}}">Delete</button>
+        </form>
 
     </div>
     {{/each}}
