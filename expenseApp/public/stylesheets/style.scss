@@ -4,9 +4,23 @@
   font-family: monospace;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 98%;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  background-color: white;
+  border-radius: 40px;
+}
+
 .nav {
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(0, 16, 60);
   color: #777;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
@@ -482,10 +496,10 @@ ul li ul li {
 }
 
 #faq-container {
-  color: white;
+  color: #16a085;
   text-align: center;
   width: 80%;
-  margin: 0% 10%;
+  margin: 0% 5%;
 }
 
 #faq-container h1 {
