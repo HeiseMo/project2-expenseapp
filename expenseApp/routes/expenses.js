@@ -48,7 +48,7 @@ router.get("/expenses/daily", (req, res) => {
   console.log(day);
   console.log(end);
   if (day && end) {
-    Expense.find({ purchaseDate: { $gte: day, $lte: end } })
+    Expense.find({user: req.user._id, purchaseDate: { $gte: day, $lte: end } })
       .sort({ purchaseDate: 1 })
       .then((expenseData) => {
         res.render("expenses/daily", {
@@ -58,7 +58,7 @@ router.get("/expenses/daily", (req, res) => {
       })
       .catch((err) => console.log("error", err));
   } else if (day) {
-    Expense.find({ purchaseDate: day })
+    Expense.find({user: req.user._id, purchaseDate: day })
       .sort({ purchaseDate: 1 })
       .then((expenseData) => {
         res.render("expenses/daily", {
