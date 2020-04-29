@@ -18,6 +18,8 @@ document.getElementById("totalMoneySpent").innerHTML = sumPrices(purchasePrice);
 
 var ctx = document.getElementById("myChart").getContext("2d");
 var myChart = new Chart(ctx, {
+  responsive:true,
+  maintainAspectRatio: false,
   type: "bar",
   data: {
     labels: purchaseDate,
