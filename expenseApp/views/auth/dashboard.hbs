@@ -1,3 +1,4 @@
+{{> privateHeader}}
 <div class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
@@ -11,25 +12,40 @@
         </form>
     </div>
 </div>
-<div class="expenseMainBox">
-    {{#each expense}}
-    <div class="expenseBox">
-        <div class="expenseName">
 
-            <p>{{expenseType}}</p>
+
+    <div class="expenseMainBox">
+        <div class="expenseBox" style="color: #19b698;">
+        <div class="expenseName">
+            <p>Expense Type</p>
         </div>
         <div class="expenseDate">
-            <p>{{purchaseDate}}</p>
+            <p>Purchase Date</p>
         </div>
         <div class="expenseCreator">
-            <p>{{description}}</p>
+            <p>Description</p>
         </div>
         <div class="expenseSum">
-            <p>{{price}}</p>
+            <p>Sum</p>
         </div>
 
     </div>
-    {{/each}}
-</div>
-<a href="/logout">Logout</a>
+    {{#each expense}}
+    <div class="expenseBox">
+            <div class="expenseName">
+                <p>{{expenseType}}</p>
+            </div>
+            <div class="expenseDate">
+                <p>{{formatDate purchaseDate}}</p>
+            </div>
+            <div class="expenseCreator">
+                <p>{{description}}</p>
+            </div>
+            <div class="expenseSum">
+                <p>{{price}}</p>
+            </div>
+
+    </div>
+        {{/each}}
+
 <script src="/javascripts/dashboard.js"></script>

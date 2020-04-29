@@ -3,32 +3,46 @@
   padding: 0;
   font-family: monospace; }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 98%;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  background-color: white;
+  border-radius: 40px; }
+
 .nav {
   height: 10vh;
-  width: 100vw;
-  background-color: white;
+  width: 100%;
+  background-color: #00103c;
   color: #777;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  border-bottom-left-radius: 50px; }
 
 .title {
   font-size: 48px;
   padding: 1vh;
   margin-left: 5vh;
-  color: #16a085; }
+  color: white; }
 
 .trigger {
   font-size: 56px; }
 
 .trigger > a {
   text-decoration: none;
-  color: #777; }
+  color: white; }
 
 .trigger > a:hover {
   font-size: 86px;
-  color: #34495e; }
+  color: #19b698; }
 
 .navigationLinks {
   list-style: none;
@@ -46,20 +60,31 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2vh; }
+  height: 85vh;
+  width: 98%;
+  margin-top: 1%;
+  margin-left: 1%;
+  background-color: white;
+  border-radius: 40px; }
 
 .expenseBox {
-  height: 7vh;
-  width: 97vw;
-  background-color: #95a5a6;
+  height: 5vh;
+  width: 70%;
+  background-color: white;
   margin-bottom: 0.5vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: white;
-  border: solid 0.05em black;
+  color: #001c6e;
+  border-bottom: solid 0.05em #d4d4d4;
   font-size: 18px;
-  font-family: monospace; }
+  font-family: monospace;
+  margin-right: 1%; }
+
+.expenseBox:hover {
+  border-top: solid 25px white;
+  border-radius: 100px;
+  transition: ease 1s; }
 
 .expenseName {
   width: 10vw;
@@ -93,7 +118,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ecf0f1;
-  font-family: monospace; }
+  font-family: monospace;
+  border-radius: 40px; }
 
 .loginTitle {
   display: flex;
@@ -102,7 +128,8 @@ body {
   align-items: center;
   height: 10vh;
   width: 100%;
-  font-size: 48px; }
+  font-size: 48px;
+  color: #19b698; }
 
 .userBox {
   display: flex;
@@ -182,14 +209,15 @@ body {
   justify-content: center;
   background: #19b698;
   font-family: monospace;
-  align-items: center; }
+  align-items: center;
+  color: #001c6e; }
 
 .welcomeTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  margin-left: 5vh;
   width: 100%;
   font-size: 28px; }
 
@@ -198,9 +226,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10%;
   width: 90%;
   margin: 5vh; }
+
+.welcomeSignup a {
+  color: #001c6e; }
 
 .welcomeSignup button {
   width: 10vw;
@@ -222,13 +252,15 @@ a {
   text-decoration: none; }
 
 nav {
-  font-family: monospace; }
+  font-family: monospace;
+  margin-right: 5vw; }
 
 ul {
   background: darkorange;
   list-style: none;
   margin: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  font-size: 18px; }
 
 li {
   color: #16a085;
@@ -244,14 +276,14 @@ li a {
 
 li:hover,
 li:focus-within {
-  background: red;
+  background: #001c6e;
   cursor: pointer; }
 
 li:focus-within a {
   outline: none; }
 
 ul li ul {
-  background: orange;
+  background: #00103c;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -376,10 +408,10 @@ ul li ul li {
   color: #16a085; }
 
 #faq-container {
-  color: white;
+  color: #16a085;
   text-align: center;
   width: 80%;
-  margin: 0% 10%; }
+  margin: 0% 5%; }
 
 #faq-container h1 {
   font-size: 54px;
