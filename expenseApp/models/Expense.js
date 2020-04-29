@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   expenseType: String, //dropdown menu with options
   price: String,
   createdDate: String,
   purchaseCurrency: String,
-  purchaseDate: { type: Date, default: Date.now },
-  //purchaseDate: { type: String, default: new Date(Date.now()).toString() },
+  purchaseDate: String,
   description: String,
   items: Array,
 });

@@ -2,14 +2,17 @@
     <div class="flex-daily">
         <div>
             <h3>Year</h3>
-            <select name="select" class="form-control" id="dropdownYear" style="width: 120px" ;>
-                <option value=" 2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020" selected="selected">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
+            <form action="/expenses/yearly" method="GET">
+                <select name="year" class="form-control" id="dropdownYear" style="width: 120px" ;>
+                    <option value=" 2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020" selected="selected">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
         </div>
         <div>
             <h3>Total Money Spent:</h3>
@@ -44,3 +47,8 @@
         </div>
     </div>
 </div>
+<script>
+    var expenseObject = {{{ expenseString }}}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="/javascripts/monthly.js"></script>

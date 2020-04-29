@@ -96,16 +96,14 @@ router.get("/logout", (req, res) => {
 //VIP AREA
 
 router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
-  Expense.find()
-  .then((expenseData) => {
-    console.log("Retrieved expense from DB:", expenseData);
-
-    res.render("auth/dashboard", { expense: expenseData });
-  })
-  .catch((err) => {
-    console.log("Error retrieving expenses from DB", err);
-    next();
-  });
+  Expense.find({ user: req.user._id })
+    .then((expenseData) => {
+      res.render("auth/dashboard", { expense: expenseData });
+    })
+    .catch((err) => {
+      console.log("Error retrieving expenses from DB", err);
+      next();
+    });
 });
 
 module.exports = router;

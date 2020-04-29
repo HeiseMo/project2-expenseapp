@@ -1,8 +1,18 @@
 <div class="split-page">
     <div class="flex-daily">
         <div>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" value="2020-04-28">
+            <!--<form action="/expenses/daily" method="GET">
+                <label for="start">From:</label>
+                <input class="start" type="date" id="start" name="day">
+                <button type="submit">search</button>
+            </form>-->
+            <form action="/expenses/daily" method="GET">
+                <label for="start">From:</label>
+                <input class="start" type="date" id="start" name="day">
+                <label for="end">To:</label>
+                <input class="end" type="date" id="end" name="end">
+                <button type="submit">search</button>
+            </form>
         </div>
         <div>
             <h3>Total Money Spent:</h3>
@@ -33,10 +43,19 @@
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
         <div class="expense-area">
+            <form action="/expenses/daily" method="GET">
+                <label for="start">From:</label>
+                <input class="start" type="date" id="start" name="start">
+                <label for="end">To:</label>
+                <input class="end" type="date" id="end" name="end">
+                <button type="submit">search</button>
+            </form>
+            <canvas id="myChart2" width="400" height="400"></canvas>
         </div>
     </div>
 </div>
 <script>
     var expenseObject = {{{ expenseString }}}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="/javascripts/daily.js"></script>

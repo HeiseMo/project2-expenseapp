@@ -1,9 +1,11 @@
 <div class="split-page">
     <div class="flex-daily">
         <div>
-            <label for="month">Start month:</label>
-
-            <input type="month" id="month" name="month" value="2020-04">
+            <form action="/expenses/monthly" method="GET">
+                <label for="start">Month</label>
+                <input type="month" name="month">
+                <button type="submit">search</button>
+            </form>
         </div>
         <div>
             <h3>Total Money Spent:</h3>
@@ -38,3 +40,8 @@
         </div>
     </div>
 </div>
+<script>
+    var expenseObject = {{{ expenseString }}}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="/javascripts/monthly.js"></script>
