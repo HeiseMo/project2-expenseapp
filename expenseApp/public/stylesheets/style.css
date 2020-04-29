@@ -204,7 +204,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  margin-left: 5vh;
   width: 100%;
   font-size: 28px; }
 
@@ -213,7 +213,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10%;
   width: 90%;
   margin: 5vh; }
 

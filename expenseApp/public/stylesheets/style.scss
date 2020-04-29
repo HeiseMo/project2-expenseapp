@@ -72,7 +72,7 @@ body {
 
 .expenseBox {
   height: 5vh;
-  width:70%;
+  width: 70%;
   background-color: white;
   margin-bottom: 0.5vh;
   display: flex;
@@ -85,7 +85,7 @@ body {
   margin-right: 1%;
 }
 
-.expenseBox:hover{
+.expenseBox:hover {
   border-top: solid 25px white;
   border-radius: 100px;
   transition: ease 1s;
@@ -252,7 +252,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  margin-left: 5vh;
   width: 100%;
   font-size: 28px;
 }
@@ -262,7 +262,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10%;
+  // height: 10%;
   width: 90%;
   margin: 5vh;
 }
