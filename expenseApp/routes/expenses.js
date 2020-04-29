@@ -125,7 +125,7 @@ router.get("/expenses/daily", (req, res) => {
 
 router.get("/expenses/monthly", (req, res, next) => {
   let month = req.query.month;
-  Expense.find()
+  Expense.find({user: req.user._id})
     .then((expenseData) => {
       expenseData = expenseData
         .sort((a, b) => a.purchaseDate - b.purchaseDate)
@@ -146,7 +146,7 @@ router.get("/expenses/monthly", (req, res, next) => {
 router.get("/expenses/yearly", (req, res, next) => {
   let year = req.query.year;
   console.log("typeof", year);
-  Expense.find()
+  Expense.find({user: req.user._id})
     .then((expenseData) => {
       expenseData = expenseData
         .sort((a, b) => a.purchaseDate - b.purchaseDate)

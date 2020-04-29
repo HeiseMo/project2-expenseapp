@@ -1,44 +1,63 @@
-<div class="split-page">
-    <div class="flex-daily">
-        <div>
+{{> privateHeader}}
+<div class="main">
+<div class="overlay-top">
+    <div class="overlay-top-left">
+        <h1>Monthly Reports</h1>
+        <div class="reportWrapperSmall">
+        <div class="datePicker">
             <form action="/expenses/monthly" method="GET">
                 <label for="start">Month</label>
                 <input type="month" name="month">
                 <button type="submit">search</button>
             </form>
         </div>
-        <div>
-            <h3>Total Money Spent:</h3>
         </div>
-        <div>
-            <table class="daily-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Grocery</td>
-                        <td>5 Euros</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="reportWrapperBig">
+            <div class="reportInfo">
+            <span>Total Money Spent:</span><span id="totalMoneySpent"></span>
         </div>
-        <div>
-            <h3>Savings for the Month: 5 Euros</h3>
         </div>
     </div>
     <div class="chart-section">
         <div class="chart-area">
             <h1>Chart</h1>
-            <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
-        <div class="expense-area">
-            <h1>overview of expenses</h1>
+            <canvas id="myChart" width="800" height="400"></canvas>
         </div>
     </div>
+</div>
+<div class="overlay-bottom">
+            <div class="expenseBox" style="color: #19b698;">
+        <div class="expenseName">
+            <p>Expense Type</p>
+        </div>
+        <div class="expenseDate">
+            <p>Purchase Date</p>
+        </div>
+        <div class="expenseCreator">
+            <p>Description</p>
+        </div>
+        <div class="expenseSum">
+            <p>Sum</p>
+        </div>
+
+    </div>
+    {{#each expense}}
+    <div class="expenseBox">
+            <div class="expenseName">
+                <p>{{expenseType}}</p>
+            </div>
+            <div class="expenseDate">
+                <p>{{purchaseDate}}</p>
+            </div>
+            <div class="expenseCreator">
+                <p>{{description}}</p>
+            </div>
+            <div class="expenseSum">
+                <p>{{price}}</p>
+            </div>
+
+    </div>
+        {{/each}}
 </div>
 <script>
     var expenseObject = {{{ expenseString }}}
