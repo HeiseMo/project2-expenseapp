@@ -12,17 +12,6 @@ const crrncy = {
   AUD: { USD: 0.65, EUR: 0.6 },
 };
 
-// let selectCrrncy = document.getElementById("selected-currency");
-// //console.log(selectedCrrncy);
-// let currencyBtn = document.querySelector("currency-btn");
-
-// function convertToBaseCurrency() {
-//   let baseCurrency = selectCrrncy.value;
-//   console.log(baseCurrency);
-// }
-
-// currencyBtn.addEventListener("click", convertToBaseCurrency);
-
 var btn = document.querySelector(".calculate-btn");
 var baseCurrencyInput = document.getElementById("currency-1");
 var secondCurrencyInput = document.getElementById("currency-2");
@@ -31,6 +20,13 @@ var toShowAmount = document.querySelector(".given-amount");
 var toShowBase = document.querySelector(".base-currency");
 var toShowSecond = document.querySelector(".second-currency");
 var toShowResult = document.querySelector(".final-result");
+var showCalcBtn = document.querySelector(".show-calc-btn");
+var currencyCalc = document.querySelector(".container-calculator");
+
+function revealCalc() {
+  currencyCalc.classList.add("reveal-calc");
+  console.log("reveal calc");
+}
 
 function convertCurrency(event) {
   event.preventDefault();
@@ -55,4 +51,5 @@ function convertCurrency(event) {
   toShowResult.textContent = result;
 }
 
+showCalcBtn.addEventListener("click", revealCalc);
 btn.addEventListener("click", convertCurrency);

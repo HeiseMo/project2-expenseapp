@@ -2,20 +2,59 @@
 <div class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
-        <h1>Hello, I am a modal!</h1>
-        <form action="/dashboard" method="POST">
+        <h1>Add expense</h1>
+        <form id="add-expense-form" action="/dashboard" method="POST">
             <input id="expense-type" type="text" name="expenseType" placeholder="Expense Type..."></input>
             <input id="expense-price" type="text" name="price" placeholder="Price..."></input>
             <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..."></input>
             <input id="expense-description" type="text" name="description" placeholder="Description..."></input>
-            <button type="submit">Add expense</button>
+            <button class="styled-add-btn" type="submit">Add</button>
         </form>
+
+
+        <div class="currency-container">
+            <a class="show-calc-btn">Paid in a foreign currency?</a>
+            <div class="container-calculator">
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <input type="number" class="form-control" id="amount" />
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <select class="form-control" id="currency-1" required>
+                            <option>AUD</option>
+                            <option>EUR</option>
+                            <option>USD</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label>to:</label>
+                        <select class="form-control" id="currency-2" required>
+                            <option>AUD</option>
+                            <option>EUR</option>
+                            <option>USD</option>
+                        </select>
+                    </div>
+                    <button class="btn calculate-btn btn-primary mb-2">Go!</button>
+                </form>
+                <div class="result">
+                    <p>
+                        <span class="given-amount"></span>
+                        <span class="base-currency"></span>
+                        <span class="final-result"></span>
+                        <span class="second-currency"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
 
-    <div class="expenseMainBox">
-        <div class="expenseBox" style="color: #19b698;">
+
+<div class="expenseMainBox">
+    <div class="expenseBox" style="color: #19b698;">
         <div class="expenseName">
             <p>Expense Type</p>
         </div>
@@ -32,20 +71,21 @@
     </div>
     {{#each expense}}
     <div class="expenseBox">
-            <div class="expenseName">
-                <p>{{expenseType}}</p>
-            </div>
-            <div class="expenseDate">
-                <p>{{formatDate purchaseDate}}</p>
-            </div>
-            <div class="expenseCreator">
-                <p>{{description}}</p>
-            </div>
-            <div class="expenseSum">
-                <p>{{price}}</p>
-            </div>
+        <div class="expenseName">
+            <p>{{expenseType}}</p>
+        </div>
+        <div class="expenseDate">
+            <p>{{purchaseDate}}</p>
+        </div>
+        <div class="expenseCreator">
+            <p>{{description}}</p>
+        </div>
+        <div class="expenseSum">
+            <p>{{price}}</p>
+        </div>
 
     </div>
-        {{/each}}
+    {{/each}}
 
-<script src="/javascripts/dashboard.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
+    <script src="/javascripts/currency.js"></script>
