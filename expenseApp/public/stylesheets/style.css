@@ -8,10 +8,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90%;
+  min-height: 92vh;
   width: 98%;
   margin-top: 1%;
   margin-left: 1%;
+  margin-right: 1%;
   margin-bottom: 1%;
   background-color: white;
   border-radius: 40px; }
@@ -61,6 +62,30 @@
   padding: 1vh;
   margin-left: 5vh;
   color: white; }
+
+.addExpenseBtn:after {
+  content: "Add";
+  width: 7vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 92vw;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #19b698;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: 0.5s;
+  overflow: hidden; }
+
+.addExpenseBtn:hover:after {
+  content: "Add Expense";
+  width: 15vw;
+  margin-left: 85vw;
+  transition: 0.2s;
+  overflow: hidden; }
 
 .trigger {
   font-size: 56px; }
@@ -316,20 +341,24 @@ body {
 
 .reportWrapperSmall {
   background-color: #19b698;
-  height: 10%;
+  height: 15%;
   width: 40vw;
+  min-width: 40vw;
+  min-height: 15%;
   border-radius: 50px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5vh; }
+  margin-bottom: 5vh;
+  position: relative; }
 
 .reportWrapperBig {
   background-color: #19b698;
   height: 10%;
-  width: 40vw;
+  width: 15vw;
+  min-width: 15vw;
   border-radius: 50px;
   color: white;
   display: flex;
@@ -339,21 +368,24 @@ body {
   margin-bottom: 5vh; }
 
 .reportWrapperSmall span {
-  font-size: 16px;
+  font-size: 1.8em;
   font-weight: 600; }
 
 .reportWrapperBig span {
-  margin-left: 2vw;
-  font-size: 16px;
+  margin-left: 1vw;
+  font-size: 1.5em;
   font-weight: 600; }
 
 .datePicker {
   width: 100%;
-  margin-left: 2vw; }
+  margin-left: 2vw;
+  position: relative; }
 
 .datePicker input {
-  font-size: 18px;
-  width: 12vw;
+  font-size: 1.8em;
+  width: 8vw;
+  min-width: 7vw;
+  position: relative;
   border: none;
   outline: none;
   background: none;
@@ -367,7 +399,7 @@ body {
   opacity: 0; }
 
 .datePicker span {
-  font-size: 18px; }
+  font-size: 1.4em; }
 
 .styled-form-btn {
   padding: 1%;
@@ -378,9 +410,14 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.1em;
   transition-duration: 0.4s;
-  cursor: pointer; }
+  cursor: pointer;
+  position: static; }
+
+.searchSubmitButton {
+  display: flex;
+  flex-direction: row; }
 
 .styled-form-btn:hover {
   background-color: #fff;
@@ -529,22 +566,125 @@ ul li ul li {
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; }
 
-.styled-btn {
-  padding: 1% 2%;
-  margin: 5% 5%;
-  background-color: #16a085;
-  border: solid;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 22px;
-  transition-duration: 0.4s;
-  cursor: pointer; }
+#add-expense-form {
+  margin: 10% auto 0 auto;
+  padding: 30px;
+  width: 60%;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px; }
 
-.styled-btn:hover {
+#add-expense-form > input {
+  margin: 10px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px; }
+
+#add-expense-form > input[type="submit"]:hover {
+  opacity: 0.8; }
+
+#add-expense-form > input[type="submit"]:active {
+  opacity: 0.4; }
+
+.show-calc-btn {
+  margin: 5%;
+  float: left;
+  clear: left;
+  display: inline-block;
+  color: cornflowerblue;
+  text-decoration: none; }
+
+.styled-add-btn {
+  font-size: 18px;
+  padding: 15px 50px;
+  width: auto;
+  background: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  clear: right;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px; }
+
+.styled-add-btn:hover {
   background-color: #fff;
-  color: #16a085; }
+  color: #16a085;
+  border: solid; }
+
+.currency-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%; }
+
+.container-calculator {
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  padding-bottom: 0; }
+
+.form-group {
+  display: flex;
+  justify-content: flex-end; }
+
+.form-control {
+  padding: 5px 5px;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px;
+  margin: 2px; }
+
+.calculate-btn {
+  padding: 5%;
+  margin: 5%;
+  width: auto;
+  background: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  clear: right;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px; }
+
+.reveal-calc {
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; }
 
 #faq-container {
   color: #16a085;
@@ -577,5 +717,42 @@ ul li ul li {
 .styled-btn:hover > a {
   background-color: #fff;
   color: #16a085; }
+
+.edit-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 60%;
+  width: 60%;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 50px 0px;
+  margin: auto;
+  flex-direction: column; }
+
+.edit-form label {
+  text-align: center;
+  margin: 20px auto;
+  display: block; }
+
+.edit-form button {
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #f1f1f1;
+  background-color: #001c6e;
+  box-shadow: 5px 15px 15px 2px; }
+
+.expenseBox button {
+  color: #f1f1f1;
+  background-color: #001c6e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 15px 15px 2px; }
 
 /*# sourceMappingURL=style.css.map */

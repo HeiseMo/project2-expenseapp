@@ -1,5 +1,5 @@
 var modal = document.querySelector(".modal");
-var trigger = document.querySelector(".trigger");
+var trigger = document.querySelector(".addExpenseBtn");
 var closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
