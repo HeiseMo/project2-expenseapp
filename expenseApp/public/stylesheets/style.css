@@ -155,7 +155,7 @@ body {
   border-bottom: 2px solid #adadad; }
 
 .inputBox input {
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
   border: none;
   outline: none;
@@ -254,6 +254,110 @@ body {
   border: 2px solid;
   transition: 1s; }
 
+.overlay-top {
+  display: flex;
+  justify-content: space-between;
+  width: 95%; }
+
+.overlay-top h1 {
+  height: 5vh;
+  margin-bottom: 10vh; }
+
+.overlay-top-left {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: flex-start; }
+
+.reportInfo {
+  border-bottom: solid 0.025em #d4d4d4;
+  border-top: solid 0.025em #d4d4d4;
+  height: 5vh;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  margin-left: 1%; }
+
+.overlay-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  min-height: 25vh;
+  height: 100%; }
+
+.reportWrapperSmall {
+  background-color: #19b698;
+  height: 10%;
+  width: 35vw;
+  border-radius: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh; }
+
+.reportWrapperBig {
+  background-color: #19b698;
+  height: 15%;
+  width: 35vw;
+  border-radius: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 5vh; }
+
+.reportWrapperSmall span {
+  font-size: 18px;
+  font-weight: 600; }
+
+.reportWrapperBig span {
+  margin-left: 2vw;
+  font-size: 16px;
+  font-weight: 600; }
+
+.datePicker {
+  width: 100%;
+  margin-left: 2vw; }
+
+.datePicker input {
+  font-size: 18px;
+  width: 8vw;
+  border: none;
+  outline: none;
+  background: none;
+  background: #19b698 url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat; }
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  border: none; }
+
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0; }
+
+.datePicker span {
+  font-size: 18px; }
+
+.styled-form-btn {
+  padding: 1%;
+  background-color: #16a085;
+  border: solid;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+
+.styled-form-btn:hover {
+  background-color: #fff;
+  color: #16a085; }
+
 a {
   text-decoration: none; }
 
@@ -327,15 +431,14 @@ ul li ul li {
 .flex-daily {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-evenly; }
 
 .flex-daily > div {
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #f1f1f1;
-  margin: 50px 0px; }
+  background-color: #f1f1f1; }
 
 .chart-section {
   display: flex;

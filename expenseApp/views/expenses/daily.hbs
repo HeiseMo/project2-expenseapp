@@ -1,59 +1,68 @@
 {{> privateHeader}}
-<div class="split-page">
-    <div class="flex-daily">
-        <div>
-            <!--<form action="/expenses/daily" method="GET">
-                <label for="start">From:</label>
-                <input class="start" type="date" id="start" name="day">
-                <button type="submit">search</button>
-            </form>-->
+<div class="main">
+<div class="overlay-top">
+    <div class="overlay-top-left">
+        <h1>Daily Reports</h1>
+        <div class="reportWrapperSmall">
+        <div class="datePicker">
             <form action="/expenses/daily" method="GET">
-                <label for="start">From:</label>
+                <span>Period:</span>
                 <input class="start" type="date" id="start" name="day">
-                <label for="end">To:</label>
+                <span>-</span>
                 <input class="end" type="date" id="end" name="end">
-                <button type="submit">search</button>
+                <button class="styled-form-btn" type="submit">Search</button>
             </form>
         </div>
-        <div>
-            <h3>Total Money Spent:</h3>
         </div>
-        <div>
-            <table class="daily-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Grocery</td>
-                        <td>5 Euros</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="reportWrapperBig">
+            <div class="reportInfo">
+            <span>Total Money Spent:</span><span id="totalMoneySpent"></span>
         </div>
-        <div>
-            <h3>Savings for the Month: 5 Euros</h3>
+        {{!-- <div class="reportInfo">
+            <span>Monthly Savings</span>
+        </div> --}}
         </div>
     </div>
     <div class="chart-section">
         <div class="chart-area">
             <h1>Chart</h1>
-            <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
-        <div class="expense-area">
-            <form action="/expenses/daily" method="GET">
-                <label for="start">From:</label>
-                <input class="start" type="date" id="start" name="start">
-                <label for="end">To:</label>
-                <input class="end" type="date" id="end" name="end">
-                <button type="submit">search</button>
-            </form>
-            <canvas id="myChart2" width="400" height="400"></canvas>
+            <canvas id="myChart" width="800" height="400"></canvas>
         </div>
     </div>
+</div>
+<div class="overlay-bottom">
+            <div class="expenseBox" style="color: #19b698;">
+        <div class="expenseName">
+            <p>Expense Type</p>
+        </div>
+        <div class="expenseDate">
+            <p>Purchase Date</p>
+        </div>
+        <div class="expenseCreator">
+            <p>Description</p>
+        </div>
+        <div class="expenseSum">
+            <p>Sum</p>
+        </div>
+
+    </div>
+    {{#each expense}}
+    <div class="expenseBox">
+            <div class="expenseName">
+                <p>{{expenseType}}</p>
+            </div>
+            <div class="expenseDate">
+                <p>{{purchaseDate}}</p>
+            </div>
+            <div class="expenseCreator">
+                <p>{{description}}</p>
+            </div>
+            <div class="expenseSum">
+                <p>{{price}}</p>
+            </div>
+
+    </div>
+        {{/each}}
 </div>
 <script>
     var expenseObject = {{{ expenseString }}}

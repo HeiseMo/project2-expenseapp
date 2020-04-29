@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Expense = require("../models/Expense");
+const ensureLogin = require("connect-ensure-login");
 
 //add expenses
 router.post("/dashboard", (req, res) => {
@@ -39,18 +40,21 @@ router.post("/dashboard", (req, res) => {
     });
 });
 
-router.get("/expenses/daily", (req, res) => {
+router.get("/expenses/daily", ensureLogin.ensureLoggedIn(), (req, res) => {
   let day = req.query.day
     ? req.query.day
     : new Date().toISOString().slice(0, 10);
   // let start = req.query.start;
   let end = req.query.end;
-  console.log(day);
-  console.log(end);
+  const userId = req.user._id;
+  console.log(userId, `userId`);
+  console.log(day, end);
+
   if (day && end) {
     Expense.find({ user: req.user._id, purchaseDate: { $gte: day, $lte: end } })
       .sort({ purchaseDate: 1 })
       .then((expenseData) => {
+        console.log(expenseData);
         res.render("expenses/daily", {
           expense: expenseData,
           expenseString: JSON.stringify(expenseData),
@@ -61,6 +65,7 @@ router.get("/expenses/daily", (req, res) => {
     Expense.find({ user: req.user._id, purchaseDate: day })
       .sort({ purchaseDate: 1 })
       .then((expenseData) => {
+        console.log(expenseData);
         res.render("expenses/daily", {
           expense: expenseData,
           expenseString: JSON.stringify(expenseData),
@@ -125,7 +130,7 @@ router.get("/expenses/daily", (req, res) => {
 
 router.get("/expenses/monthly", (req, res, next) => {
   let month = req.query.month;
-  Expense.find()
+  Expense.find({ user: req.user._id })
     .then((expenseData) => {
       expenseData = expenseData
         .sort((a, b) => a.purchaseDate - b.purchaseDate)
@@ -146,7 +151,7 @@ router.get("/expenses/monthly", (req, res, next) => {
 router.get("/expenses/yearly", (req, res, next) => {
   let year = req.query.year;
   console.log("typeof", year);
-  Expense.find()
+  Expense.find({ user: req.user._id })
     .then((expenseData) => {
       expenseData = expenseData
         .sort((a, b) => a.purchaseDate - b.purchaseDate)
