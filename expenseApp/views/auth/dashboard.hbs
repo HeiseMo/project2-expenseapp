@@ -14,8 +14,8 @@
 </div>
 
 
-    <div class="expenseMainBox">
-        <div class="expenseBox" style="color: #19b698;">
+<div class="expenseMainBox">
+    <div class="expenseBox" style="color: #19b698;">
         <div class="expenseName">
             <p>Expense Type</p>
         </div>
@@ -32,20 +32,20 @@
     </div>
     {{#each expense}}
     <div class="expenseBox">
-            <div class="expenseName">
-                <p>{{expenseType}}</p>
-            </div>
-            <div class="expenseDate">
-                <p>{{formatDate purchaseDate}}</p>
-            </div>
-            <div class="expenseCreator">
-                <p>{{description}}</p>
-            </div>
-            <div class="expenseSum">
-                <p>{{price}}</p>
-            </div>
+        <div class="expenseName">
+            <p>{{expenseType}}</p>
+        </div>
+        <div class="expenseDate">
+            <p>{{purchaseDate}}</p>
+        </div>
+        <div class="expenseCreator">
+            <p>{{description}}</p>
+        </div>
+        <div class="expenseSum">
+            <p>{{price}}</p>
+        </div>
 
     </div>
-        {{/each}}
+    {{/each}}
 
-<script src="/javascripts/dashboard.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
