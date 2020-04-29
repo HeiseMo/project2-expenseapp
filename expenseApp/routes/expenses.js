@@ -187,6 +187,7 @@ router.post("/dashboard/:id/edit", (req, res, next) => {
 });
 
 router.post("/dashboard/:id/delete", (req, res, next) => {
+  console.log("hey");
   Expense.findByIdAndRemove(req.params.id)
     .then((data) => {
       res.redirect("/dashboard");
