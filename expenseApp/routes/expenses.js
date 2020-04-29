@@ -170,4 +170,36 @@ router.get("/expenses/yearly", (req, res, next) => {
     });
 });
 
+router.get("/dashboard/:id/edit", (req, res, next) => {
+  //res.send("Hey");
+  Expense.findById(req.params.id).then((expenseData) => {
+    console.log(expenseData);
+    res.render("expenses/edit", { oneExpense: expenseData });
+  });
+});
+
+router.post("/dashboard/:id/edit", (req, res, next) => {
+  const { expenseType, purchaseDate, price, description } = req.body;
+  Expense.findByIdAndUpdate(req.params.id, {
+    $set: { expenseType, purchaseDate, price, description },
+  })
+    .then((expenseData) => {
+      res.redirect("/dashboard");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+router.post("/dashboard/:id/delete", (req, res, next) => {
+  console.log("hey");
+  Expense.findByIdAndRemove(req.params.id)
+    .then((data) => {
+      res.redirect("/dashboard");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 module.exports = router;
