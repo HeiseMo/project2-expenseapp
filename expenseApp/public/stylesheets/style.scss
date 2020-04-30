@@ -7,7 +7,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 92vh;
   width: 98%;
@@ -453,8 +453,8 @@ body {
 
 .datePicker input {
   font-size: 1.8em;
-  width: 8vw;
-  min-width: 7vw;
+  width: 9vw;
+  min-width: 8vw;
   position: relative;
   border: none;
   outline: none;
