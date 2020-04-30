@@ -7,12 +7,13 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 90%;
+  min-height: 92vh;
   width: 98%;
   margin-top: 1%;
   margin-left: 1%;
+  margin-right: 1%;
   margin-bottom: 1%;
   background-color: white;
   border-radius: 40px;
@@ -69,6 +70,32 @@
   // border: 0.025em solid black;
   // border-radius: 50px;
   // background-color:#16a085;
+}
+
+.addExpenseBtn:after{
+  content: "Add";
+  width: 7vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 92vw;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #19b698;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.addExpenseBtn:hover:after{
+  content: "Add Expense";
+  width: 15vw;
+  margin-left: 85vw;
+  transition: 0.2s;
+  overflow: hidden;
 }
 
 .trigger {
@@ -371,8 +398,10 @@ body {
 
 .reportWrapperSmall {
   background-color: #19b698;
-  height: 10%;
+  height: 15%;
   width: 40vw;
+  min-width: 40vw;
+  min-height: 15%;
   border-radius: 50px;
   color: white;
   display: flex;
@@ -380,12 +409,14 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
+  position: relative;;
 }
 
 .reportWrapperBig {
   background-color: #19b698;
   height: 10%;
-  width: 40vw;
+  width: 15vw;
+  min-width: 15vw;
   border-radius: 50px;
   color: white;
   display: flex;
@@ -396,24 +427,27 @@ body {
 }
 
 .reportWrapperSmall span {
-  font-size: 16px;
+  font-size: 1.8em;
   font-weight: 600;
 }
 
 .reportWrapperBig span {
-  margin-left: 2vw;
-  font-size: 16px;
+  margin-left: 1vw;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
 .datePicker {
   width: 100%;
   margin-left: 2vw;
+  position: relative;
 }
 
 .datePicker input {
-  font-size: 18px;
-  width: 12vw;
+  font-size: 1.8em;
+  width: 9vw;
+  min-width: 8vw;
+  position: relative;
   border: none;
   outline: none;
   background: none;
@@ -432,7 +466,7 @@ body {
 }
 
 .datePicker span {
-  font-size: 18px;
+  font-size: 1.4em;
 }
 
 .styled-form-btn {
@@ -445,10 +479,15 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.1em;
   transition-duration: 0.4s;
   cursor: pointer;
-  border-radius: 20px;
+  position: static;
+}
+
+.searchSubmitButton {
+display: flex;
+flex-direction: row;
 }
 
 .styled-form-btn:hover {
@@ -700,14 +739,57 @@ ul li ul li {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 22px;
-  transition-duration: 0.4s;
-  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px;
 }
 
-.styled-btn:hover {
+#add-expense-form>input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+#add-expense-form>input[type="submit"]:active {
+  opacity: 0.4;
+}
+
+.show-calc-btn {
+  margin: 5%;
+  float: left;
+  clear: left;
+  display: inline-block;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
+.styled-add-btn {
+  font-size: 18px;
+  padding: 15px 50px;
+  width: auto;
+  background: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  clear: right;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px;
+}
+
+.styled-add-btn:hover {
   background-color: #fff;
   color: #16a085;
+  border: solid;
 }
 
 //calculator
