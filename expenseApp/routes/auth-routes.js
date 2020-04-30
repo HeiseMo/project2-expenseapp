@@ -82,7 +82,7 @@ router.post(
     passReqToCallback: true,
   }),
   function (req, res) {
-    res.redirect("/dashboard");
+    res.redirect("/dashboard/");
   }
 );
 

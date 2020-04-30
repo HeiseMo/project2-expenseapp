@@ -63,7 +63,7 @@
 }
 
 .title {
-  font-size: 40px;
+  font-size: 2.5em;
   padding: 1vh;
   margin-left: 5vh;
   color: white;
@@ -84,7 +84,7 @@
   border-bottom-left-radius: 20px;
   background-color: #19b698;
   color: white;
-  font-size: 2rem;
+  font-size: 1em;
   font-weight: 600;
   transition: 0.5s;
   overflow: hidden;
@@ -92,6 +92,7 @@
 
 .addExpenseBtn:hover:after {
   content: "Add Expense";
+  font-size: 1em;
   width: 15vw;
   margin-left: 85vw;
   transition: 0.2s;
@@ -117,7 +118,7 @@
   display: flex;
   justify-content: space-between;
   width: 30vw;
-  font-size: 16px;
+  font-size: 1.5em;
   margin-right: 2vh;
 }
 
@@ -159,7 +160,7 @@ body {
   justify-content: space-evenly;
   color: #001c6e;
   border-bottom: solid 0.05em #d4d4d4;
-  font-size: 18px;
+  font-size: 1.2em;
   font-family: monospace;
   margin-right: 1%;
 }
@@ -379,14 +380,6 @@ body {
   align-items: flex-start;
 }
 
-.reportInfo {
-  height: 3vh;
-  width: 98%;
-  display: flex;
-  align-items: center;
-  margin-left: 1%;
-}
-
 .overlay-bottom {
   display: flex;
   flex-direction: column;
@@ -405,49 +398,56 @@ body {
   border-radius: 50px;
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  position: relative;
-  ;
+
 }
 
 .reportWrapperBig {
   background-color: #19b698;
   height: 10%;
-  width: 15vw;
-  min-width: 15vw;
+  width: 25vw;
+  min-width: 25vw;
   border-radius: 50px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 5vh;
 }
 
-.reportWrapperSmall span {
-  font-size: 1.8em;
-  font-weight: 600;
+.reportInfo {
+  height: 3vh;
+  width:17vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.reportWrapperBig span {
-  margin-left: 1vw;
-  font-size: 1.5em;
+.reportInfo span {
+  font-size: 1em;
   font-weight: 600;
+  min-width: 20vw;
+}
+
+.reportInfo span {
+  margin-left: 1vw;
+  font-size: 1em;
+  font-weight: 600;
+  min-width: 20vw;
 }
 
 .datePicker {
   width: 100%;
-  margin-left: 2vw;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
 }
 
 .datePicker input {
-  font-size: 1.8em;
-  width: 9vw;
-  min-width: 8vw;
+  font-size: 1em;
   position: relative;
   border: none;
   outline: none;
@@ -465,7 +465,7 @@ body {
 }
 
 .datePicker span {
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 .styled-form-btn {
@@ -508,7 +508,7 @@ ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  font-size: 18px;
+  font-size: 1.3em;
 }
 
 li {
@@ -605,6 +605,7 @@ ul li ul li {
 
 .chart-area {
   box-sizing: border-box;
+  border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 5px;
   text-align: center;
@@ -925,7 +926,7 @@ ul li ul li {
   text-align: center;
   margin: 20px auto;
   display: block;
-  font-size: 10px;
+  font-size: 1m;
   border-radius: 10px;
   padding: 10px 20px;
   color: #f1f1f1;
@@ -934,11 +935,12 @@ ul li ul li {
 }
 
 .expenseBox button {
+  font-size: 1em;
   color: #f1f1f1;
   background-color: #001c6e;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 10px;
-  box-shadow: 5px 15px 15px 2px;
+  margin-bottom:1vh;
 }
 
 //settings
