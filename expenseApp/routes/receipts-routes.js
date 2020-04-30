@@ -10,31 +10,12 @@ const router = express.Router();
 const app = express();
 const upload = multer();
 
-// router.get("/settings", (req, res, next) => {
-//   console.log(req.user, "this is the user");
-
-//   User.findById(req.user._id).then((res) => {
-//     console.log(res);
-//   });
-
-//   res.render("items/settings");
-// });
-
-router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
-  const { title, description } = req.body;
-  const imgPath = req.file.url;
-  //console.log(imgPath, "this is the image path");
-  const imgName = req.file.originalname;
-  //console.log(imgName);
-
-  Receipt.create({ title, description, imgPath, imgName })
-    .then((receipt) => {
-      //console.log(receipt);
-      res.redirect("/settings");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+router.get("/settings", (req, res, next) => {
+  console.log(req.user, "this is the user");
+  Receipt.find().then((receipt) => {
+    console.log(receipt);
+    res.render("items/settings", { receipt: receipt });
+  });
 });
 
 router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
@@ -47,7 +28,7 @@ router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
   Receipt.create({ title, description, imgPath, imgName })
     .then((receipt) => {
       //console.log(receipt);
-      res.redirect("/dashboard");
+      res.redirect("/settings");
     })
     .catch((error) => {
       console.log(error);

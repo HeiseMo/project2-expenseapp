@@ -7,10 +7,6 @@ const receiptSchema = new Schema({
   description: String,
   imgName: String,
   imgPath: String,
-  // expense: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Expense",
-  // },
 });
 
 const Receipt = mongoose.model("Receipt", receiptSchema);

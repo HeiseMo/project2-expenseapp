@@ -112,21 +112,4 @@ router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
     });
 });
 
-router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
-  const { title, description } = req.body;
-  const imgPath = req.file.url;
-  //console.log(imgPath, "this is the image path");
-  const imgName = req.file.originalname;
-  //console.log(imgName);
-
-  Receipt.create({ title, description, imgPath, imgName })
-    .then((receipt) => {
-      //console.log(receipt);
-      res.redirect("/dashboard");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
-
 module.exports = router;

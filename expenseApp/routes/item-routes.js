@@ -29,14 +29,14 @@ router.get("/faq", (req, res, next) => {
 //   res.render("items/settings");
 // });
 
-router.post("/settings", (req, res, next) => {
-  const { currency } = req.body;
-  Expense.create({ currency })
-    .then((data) => {
-      console.log(data);
-      res.redirect("/settings");
-    })
-    .catch((err) => console.log("error choosing currency", err));
-});
+// router.post("/settings", (req, res, next) => {
+//   const { currency } = req.body;
+//   Expense.create({ currency })
+//     .then((data) => {
+//       console.log(data);
+//       res.redirect("/settings");
+//     })
+//     .catch((err) => console.log("error choosing currency", err));
+// });
 
 module.exports = router;
