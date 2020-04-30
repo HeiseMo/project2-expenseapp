@@ -1,54 +1,54 @@
 {{> privateHeader}}
 <div class="main">
-<div class="overlay-top">
-    <div class="overlay-top-left">
-        <h1>Monthly Reports</h1>
-        <div class="reportWrapperSmall">
-        <div class="datePicker">
-            <form action="/expenses/yearly" method="GET">
-                <select name="year" class="form-control" id="dropdownYear" style="width: 120px" ;>
-                    <option value=" 2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020" selected="selected">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                </select>
-                <button type="submit">Search</button>
-            </form>
+    <div class="overlay-top">
+        <div class="overlay-top-left">
+            <h1>Annual Reports</h1>
+            <div class="reportWrapperSmall">
+                <div class="datePicker">
+                    <form action="/expenses/yearly" method="GET">
+                        <select name="year" class="form-control" id="dropdownYear" style="width: 120px" ;>
+                            <option value=" 2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020" selected="selected">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="reportWrapperBig">
+                <div class="reportInfo">
+                    <span>Total Money Spent:</span><span id="totalMoneySpent"></span>
+                </div>
+            </div>
         </div>
-        </div>
-        <div class="reportWrapperBig">
-            <div class="reportInfo">
-            <span>Total Money Spent:</span><span id="totalMoneySpent"></span>
-        </div>
+        <div class="chart-section">
+            <div class="chart-area">
+                <h1>Chart</h1>
+                <canvas id="myChart" width="800" height="400"></canvas>
+            </div>
         </div>
     </div>
-    <div class="chart-section">
-        <div class="chart-area">
-            <h1>Chart</h1>
-            <canvas id="myChart" width="800" height="400"></canvas>
-        </div>
-    </div>
-</div>
-<div class="overlay-bottom">
-            <div class="expenseBox" style="color: #19b698;">
-        <div class="expenseName">
-            <p>Expense Type</p>
-        </div>
-        <div class="expenseDate">
-            <p>Purchase Date</p>
-        </div>
-        <div class="expenseCreator">
-            <p>Description</p>
-        </div>
-        <div class="expenseSum">
-            <p>Sum</p>
-        </div>
+    <div class="overlay-bottom">
+        <div class="expenseBox" style="color: #19b698;">
+            <div class="expenseName">
+                <p>Expense Type</p>
+            </div>
+            <div class="expenseDate">
+                <p>Purchase Date</p>
+            </div>
+            <div class="expenseCreator">
+                <p>Description</p>
+            </div>
+            <div class="expenseSum">
+                <p>Sum</p>
+            </div>
 
-    </div>
-    {{#each expense}}
-    <div class="expenseBox">
+        </div>
+        {{#each expense}}
+        <div class="expenseBox">
             <div class="expenseName">
                 <p>{{expenseType}}</p>
             </div>
@@ -62,11 +62,11 @@
                 <p>{{price}}</p>
             </div>
 
-    </div>
+        </div>
         {{/each}}
-</div>
-<script>
-    var expenseObject = {{{ expenseString }}}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="/javascripts/yearly.js"></script>
+    </div>
+    <script>
+        var expenseObject = {{{ expenseString }}}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/javascripts/yearly.js"></script>

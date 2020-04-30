@@ -99,7 +99,10 @@ router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
   console.log(req.user);
   Expense.find({ user: req.user._id })
     .then((expenseData) => {
-      res.render("auth/dashboard", { expense: expenseData });
+      res.render("auth/dashboard", {
+        expense: expenseData,
+        expenseString: JSON.stringify(expenseData),
+      });
     })
     .catch((err) => {
       console.log("Error retrieving expenses from DB", err);

@@ -128,47 +128,55 @@ router.get("/expenses/daily", ensureLogin.ensureLoggedIn(), (req, res) => {
 //     });
 // });
 
-router.get("/expenses/monthly", (req, res, next) => {
-  let month = req.query.month;
-  Expense.find({ user: req.user._id })
-    .then((expenseData) => {
-      expenseData = expenseData
-        .sort((a, b) => a.purchaseDate - b.purchaseDate)
-        .filter((val) => {
-          return val.purchaseDate.includes(month);
+router.get(
+  "/expenses/monthly",
+  ensureLogin.ensureLoggedIn(),
+  (req, res, next) => {
+    let month = req.query.month;
+    Expense.find({ user: req.user._id })
+      .then((expenseData) => {
+        expenseData = expenseData
+          .sort((a, b) => a.purchaseDate - b.purchaseDate)
+          .filter((val) => {
+            return val.purchaseDate.includes(month);
+          });
+        res.render("expenses/monthly", {
+          expense: expenseData,
+          expenseString: JSON.stringify(expenseData),
         });
-      res.render("expenses/monthly", {
-        expense: expenseData,
-        expenseString: JSON.stringify(expenseData),
+      })
+      .catch((err) => {
+        console.log("Error retrieving expenses from DB", err);
+        next();
       });
-    })
-    .catch((err) => {
-      console.log("Error retrieving expenses from DB", err);
-      next();
-    });
-});
+  }
+);
 
-router.get("/expenses/yearly", (req, res, next) => {
-  let year = req.query.year;
-  console.log("typeof", year);
-  Expense.find({ user: req.user._id })
-    .then((expenseData) => {
-      expenseData = expenseData
-        .sort((a, b) => a.purchaseDate - b.purchaseDate)
-        .filter((val) => {
-          return val.purchaseDate.includes(year);
+router.get(
+  "/expenses/yearly",
+  ensureLogin.ensureLoggedIn(),
+  (req, res, next) => {
+    let year = req.query.year;
+    console.log("typeof", year);
+    Expense.find({ user: req.user._id })
+      .then((expenseData) => {
+        expenseData = expenseData
+          .sort((a, b) => a.purchaseDate - b.purchaseDate)
+          .filter((val) => {
+            return val.purchaseDate.includes(year);
+          });
+        console.log(expenseData, "expense");
+        res.render("expenses/yearly", {
+          expense: expenseData,
+          expenseString: JSON.stringify(expenseData),
         });
-      console.log(expenseData, "expense");
-      res.render("expenses/yearly", {
-        expense: expenseData,
-        expenseString: JSON.stringify(expenseData),
+      })
+      .catch((err) => {
+        console.log("Error retrieving expenses from DB", err);
+        next();
       });
-    })
-    .catch((err) => {
-      console.log("Error retrieving expenses from DB", err);
-      next();
-    });
-});
+  }
+);
 
 router.get("/dashboard/:id/edit", (req, res, next) => {
   //res.send("Hey");

@@ -15,3 +15,12 @@ function windowOnClick(event) {
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
+
+let expensePrice = document.querySelectorAll(".expenseSum");
+console.log(expensePrice[3]);
+let purchasePrice = expenseObject
+  .map((val) => {
+    return Number(val.price);
+  })
+  .sort((a, b) => a - b);
+console.log(purchasePrice);

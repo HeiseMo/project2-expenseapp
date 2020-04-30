@@ -6,10 +6,10 @@ let purchasePrice = expenseObject.map((val) => {
 });
 
 sumOfPurchasePrice = 0;
-function sumPrices(prices){
+function sumPrices(prices) {
   let myPrices = [...prices];
-  for(let i = 0; i < myPrices.length; i++){
-    sumOfPurchasePrice += parseInt(myPrices[i])
+  for (let i = 0; i < myPrices.length; i++) {
+    sumOfPurchasePrice += parseInt(myPrices[i]);
   }
   return sumOfPurchasePrice;
 }
