@@ -344,6 +344,7 @@ body {
 
 .styled-form-btn {
   padding: 1%;
+  margin-bottom: 3%;
   background-color: #16a085;
   border: solid;
   color: white;
@@ -352,7 +353,8 @@ body {
   display: inline-block;
   font-size: 20px;
   transition-duration: 0.4s;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 20px; }
 
 .styled-form-btn:hover {
   background-color: #fff;
@@ -479,11 +481,11 @@ ul li ul li {
   background-color: white;
   padding: 1rem 1.5rem;
   width: 50%;
-  height: 60%;
+  height: auto;
   border-radius: 0.5rem; }
 
 .modal h1 {
-  margin-top: 8%;
+  margin-top: 6%;
   color: #333;
   font-size: 42px;
   text-align: center; }
@@ -550,7 +552,7 @@ ul li ul li {
 
 .styled-add-btn {
   font-size: 18px;
-  padding: 15px 50px;
+  padding: 4% 10%;
   width: auto;
   background: #1abc9c;
   border: none;
@@ -574,53 +576,51 @@ ul li ul li {
 .currency-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 5%; }
 
 .container-calculator {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-  padding-bottom: 0; }
+  padding-bottom: 5%; }
 
 .form-group {
   display: flex;
   justify-content: flex-end; }
 
-.form-control {
-  padding: 5px 5px;
+.form-group > select {
   outline: none;
   border: 1px solid #bbb;
-  border-radius: 20px;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  border-radius: 20px;
-  margin: 2px; }
+  border-radius: 5px;
+  margin: 2%; }
+
+.form-control {
+  padding: 2% 6%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 15px;
+  margin: 3%; }
 
 .calculate-btn {
-  padding: 5%;
+  padding: 4% 10%;
   margin: 5%;
   width: auto;
   background: #1abc9c;
-  border: none;
+  border: solid;
   color: white;
   cursor: pointer;
   display: inline-block;
-  float: right;
-  clear: right;
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -ms-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
   border-radius: 20px; }
+
+.calculate-btn:hover {
+  background-color: #fff;
+  color: #16a085; }
+
+.currency-dropdowns {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; }
 
 .reveal-calc {
   visibility: visible;
@@ -693,6 +693,14 @@ ul li ul li {
   color: #f1f1f1;
   background-color: #001c6e;
   padding: 10px 20px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  box-shadow: 5px 15px 15px 2px; }
+
+#settings-container {
+  padding: 10%;
+  color: white;
+  font-family: monospace;
+  font-size: 32px;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

@@ -123,8 +123,8 @@ app.use(
     sourceMap: true,
   })
 );
-hbs.registerPartials(__dirname + '/views/partials')
-hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerPartials(__dirname + "/views/partials");
+hbs.registerPartials(path.join(__dirname, "views/partials"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
@@ -144,6 +144,9 @@ app.use("/", expensesView);
 
 const itemRoutes = require("./routes/item-routes");
 app.use("/", itemRoutes);
+
+const receiptsRoutes = require("./routes/receipts-routes");
+app.use("/", receiptsRoutes);
 
 module.exports = app;
 
