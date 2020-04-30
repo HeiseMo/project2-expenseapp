@@ -11,6 +11,7 @@
             <h4>{{this.title}}</h4>
             <p>{{this.description}}</p>
             <img src="{{this.imgPath}}" attr="{{this.title}}">
+            <p>Date uploaded: {{this.created_at}}</p>
         </div>
         {{else}}
         <p>There are no receipts yet! :(</p>
@@ -33,11 +34,6 @@
 
         <input type="submit" value="SAVE">
     </form>
-
-
-    <input type="file" id="impFile" multiple>
-    <button id="btnUpload">Upload files</button>
-
 </div>
 
 <script src="/javascripts/settings.js"></script>

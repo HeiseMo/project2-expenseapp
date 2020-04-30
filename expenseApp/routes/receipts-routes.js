@@ -9,14 +9,24 @@ const uploadCloud = require("../config/cloudinary.js");
 const router = express.Router();
 const app = express();
 const upload = multer();
+const ensureLogin = require("connect-ensure-login");
+const passport = require("passport");
 
-router.get("/settings", (req, res, next) => {
+router.get("/settings", ensureLogin.ensureLoggedIn(), (req, res) => {
   console.log(req.user, "this is the user");
-  Receipt.find().then((receipt) => {
+  Receipt.find({ user: req.user._id }).then((receipt) => {
     console.log(receipt);
     res.render("items/settings", { receipt: receipt });
   });
 });
+
+// router.get("/settings", (req, res, next) => {
+//   console.log(req.user, "this is the user");
+//   Receipt.find().then((receipt) => {
+//     console.log(receipt);
+//     res.render("items/settings", { receipt: receipt });
+//   });
+// });
 
 router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
   const { title, description } = req.body;
@@ -25,7 +35,7 @@ router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
   const imgName = req.file.originalname;
   //console.log(imgName);
 
-  Receipt.create({ title, description, imgPath, imgName })
+  Receipt.create({ title, description, imgPath, imgName, user: req.user._id })
     .then((receipt) => {
       //console.log(receipt);
       res.redirect("/settings");
