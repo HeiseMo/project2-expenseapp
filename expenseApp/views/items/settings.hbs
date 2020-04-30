@@ -1,0 +1,28 @@
+{{> privateHeader}}
+<link rel="stylesheet" href="/stylesheets/settings-styles.css">
+
+
+
+
+<div id="settings-container">
+    <h1>Upload your receipts</h1>
+
+
+    <input type="file" id="impFile" multiple>
+    <button id="btnUpload">Upload files</button>
+
+
+    {{!-- <form class="currency-form" action="/settings" method="POST">
+        <label for="currency">Choose a currency:</label>
+        <select class="currency-dropdown" id="selected-currency" name="currency">
+            <option value="EUR">Euro</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="RUPIAH">Indonesian Rupiah</option>
+            <option value="YEN">Japanese Yen</option>
+            <option value="USD">US Dollar</option>
+        </select>
+        <button class="styled-btn currency-btn">Select</button>
+    </form> --}}
+</div>
+
+<script src="/javascripts/settings.js"></script>
