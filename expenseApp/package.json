@@ -10,7 +10,6 @@
   "dependencies": {
     "bcrypt": "^4.0.1",
     "body-parser": "^1.18.3",
-    "connect": "^3.7.0",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
