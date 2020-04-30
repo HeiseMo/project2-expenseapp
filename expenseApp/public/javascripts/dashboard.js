@@ -23,6 +23,7 @@ function windowOnClick(event) {
 }
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleEditModal);
 window.addEventListener("click", windowOnClick);
 triggerEdit.addEventListener("click", toggleEditModal);
 
