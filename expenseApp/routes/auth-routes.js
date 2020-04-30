@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const flash = require("connect-flash");
 const Expense = require("../models/Expense");
+const Receipt = require("../models/Receipt");
+const uploadCloud = require("../config/cloudinary.js");
 
 // User model
 const User = require("../models/User");

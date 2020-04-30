@@ -2,27 +2,38 @@
 <link rel="stylesheet" href="/stylesheets/settings-styles.css">
 
 
-
-
 <div id="settings-container">
-    <h1>Upload your receipts</h1>
+
+    <h1>Receipts:</h1>
+    <div class="receipt-wrapper">
+        {{#each receipt}}
+        <div class="receipt-item">
+            <h4>{{this.title}}</h4>
+            <p>{{this.description}}</p>
+            <img src="{{this.imgPath}}" attr="{{this.title}}">
+            <p>Date uploaded: {{this.created_at}}</p>
+        </div>
+        {{else}}
+        <p>There are no receipts yet! :(</p>
+
+        {{/each}}
+    </div>
 
 
-    <input type="file" id="impFile" multiple>
-    <button id="btnUpload">Upload files</button>
+    <h4>Upload your receipts</h4>
 
+    <form action="/settings" method="post" enctype="multipart/form-data">
+        <label>Receipt label</label>
+        <input type="text" name="title">
 
-    {{!-- <form class="currency-form" action="/settings" method="POST">
-        <label for="currency">Choose a currency:</label>
-        <select class="currency-dropdown" id="selected-currency" name="currency">
-            <option value="EUR">Euro</option>
-            <option value="AUD">Australian Dollar</option>
-            <option value="RUPIAH">Indonesian Rupiah</option>
-            <option value="YEN">Japanese Yen</option>
-            <option value="USD">US Dollar</option>
-        </select>
-        <button class="styled-btn currency-btn">Select</button>
-    </form> --}}
+        <label>Description</label>
+        <input type="text" name="description">
+
+        <label>Photo of receipt</label>
+        <input type="file" name="photo">
+
+        <input type="submit" value="SAVE">
+    </form>
 </div>
 
 <script src="/javascripts/settings.js"></script>
