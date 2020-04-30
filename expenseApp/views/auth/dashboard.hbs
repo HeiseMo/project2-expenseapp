@@ -2,7 +2,7 @@
 <div class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
-        <h1>Add expense</h1>
+        <h1 id="dashboardAddExpenseH1">Add expense</h1>
         <form id="add-expense-form" action="/dashboard" method="POST" autocomplete="off">
             <select class="expense-type" id="expense-type" type="text" name="expenseType" placeholder="Expense Type..." required>
                 <option value="" disabled selected>Select a Category</option>
@@ -23,6 +23,20 @@
             <input id="expense-description" type="text" name="description" placeholder="Description..." required></input>
             <button class="styled-add-btn" type="submit">Add</button>
         </form>
+
+        <form action="/settings" method="post" enctype="multipart/form-data">
+            <label>Receipt label</label>
+            <input type="text" name="title">
+
+            <label>Description</label>
+            <input type="text" name="description">
+
+            <label>Photo of receipt</label>
+            <input type="file" name="photo">
+
+            <input type="submit" value="SAVE">
+        </form>
+
 
 
         <div class="currency-container">
@@ -77,15 +91,6 @@
     </div>
     <div class="addExpenseBtn">
         <span></span>
-    </div>
-    <div>
-        <select onChange={sortTheExpenses()} name="sort" id="sort">
-            <option value="sort" disabled selected>sort by</option>
-            <option id="pa" value="price ascending">price ascending</option>
-            <option id="pd" value="price descending">price descending</option>
-            <option id="da" value="date ascending">date ascending</option>
-            <option id="dd" value="date descending">date descending</option>
-        </select>
     </div>
     <div class="expenseBox" style="color: #19b698;">
         <div class="expenseName">

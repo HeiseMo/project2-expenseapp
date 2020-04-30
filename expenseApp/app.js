@@ -10,6 +10,8 @@ const logger = require("morgan");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
+const uploadCloud = require("./config/cloudinary.js");
+const Receipts = require("./models/Receipt");
 
 // handlebar helpers
 
@@ -38,7 +40,8 @@ const User = require("./models/User");
 
 mongoose
   .connect(
-    "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
+    "mongodb://localhost/expenseapp",
+    // "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
     {
       useNewUrlParser: true,
     }

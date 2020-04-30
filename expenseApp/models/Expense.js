@@ -13,7 +13,10 @@ const expenseSchema = new Schema({
   purchaseDate: String,
   description: String,
   items: Array,
-  receipt: Array,
+  receipt: {
+    type: Schema.Types.ObjectId,
+    ref: "Receipt",
+  },
 });
 
 const Expense = mongoose.model("Expense", expenseSchema);
