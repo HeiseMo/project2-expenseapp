@@ -18,6 +18,12 @@ hbs.handlebars.registerHelper("formatDate", function (date) {
   return formattedDate;
 });
 
+// expenseSorting
+hbs.handlebars.registerHelper("sortExpenses", function (type) {
+  const formattedDate = date.toString().slice(3, 16);
+  return formattedDate;
+});
+
 //Session Stuff
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);

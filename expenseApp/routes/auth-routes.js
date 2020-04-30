@@ -102,6 +102,7 @@ router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
       res.render("auth/dashboard", {
         expense: expenseData,
         expenseString: JSON.stringify(expenseData),
+        expenseCopy: expenseData, //test
       });
     })
     .catch((err) => {

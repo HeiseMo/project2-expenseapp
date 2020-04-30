@@ -7,7 +7,7 @@ const expenseSchema = new Schema({
     ref: "User",
   },
   expenseType: String, //dropdown menu with options
-  price: String,
+  price: Number,
   createdDate: String,
   purchaseCurrency: String,
   purchaseDate: String,

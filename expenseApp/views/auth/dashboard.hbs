@@ -18,7 +18,7 @@
                 <option value="Gifts and Donations">Gifts and Donations</option>
                 <option value="Other">Other</option>
             </select>
-            <input id="expense-price" type="text" name="price" placeholder="Price..." required></input>
+            <input id="expense-price" type="number" name="price" placeholder="Price..." required></input>
             <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..." required></input>
             <input id="expense-description" type="text" name="description" placeholder="Description..." required></input>
             <button class="styled-add-btn" type="submit">Add</button>
@@ -76,7 +76,16 @@
         <div class="name"><span>Timur James Tanurhan</span></div>
     </div>
     <div class="addExpenseBtn">
-    <span></span>
+        <span></span>
+    </div>
+    <div>
+        <select onChange={sortTheExpenses()} name="sort" id="sort">
+            <option value="sort" disabled selected>sort by</option>
+            <option id="pa" value="price ascending">price ascending</option>
+            <option id="pd" value="price descending">price descending</option>
+            <option id="da" value="date ascending">date ascending</option>
+            <option id="dd" value="date descending">date descending</option>
+        </select>
     </div>
     <div class="expenseBox" style="color: #19b698;">
         <div class="expenseName">
@@ -125,6 +134,13 @@
 
     <script>
         var expenseObject = {{{ expenseString }}}
+        const sortTheExpenses = () => {
+            const sortComponent = document.getElementById('sort')
+            const selectedOption = sortComponent.options[sortComponent.selectedIndex].value
+            console.log(selectedOption)
+        }
+
+
     </script>
     <script src="/javascripts/currency.js"></script>
     <script src="/javascripts/dashboard.js"></script>
