@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const flash = require("connect-flash");
 const Expense = require("../models/Expense");
+const Receipt = require("../models/Receipt");
+const uploadCloud = require("../config/cloudinary.js");
 
 // User model
 const User = require("../models/User");
@@ -107,6 +109,23 @@ router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
     .catch((err) => {
       console.log("Error retrieving expenses from DB", err);
       next();
+    });
+});
+
+router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
+  const { title, description } = req.body;
+  const imgPath = req.file.url;
+  //console.log(imgPath, "this is the image path");
+  const imgName = req.file.originalname;
+  //console.log(imgName);
+
+  Receipt.create({ title, description, imgPath, imgName })
+    .then((receipt) => {
+      //console.log(receipt);
+      res.redirect("/dashboard");
+    })
+    .catch((error) => {
+      console.log(error);
     });
 });
 

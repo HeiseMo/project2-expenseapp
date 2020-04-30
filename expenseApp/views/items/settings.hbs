@@ -5,11 +5,43 @@
 
 
 <div id="settings-container">
-    <h1>Upload your receipts</h1>
 
 
-    <input type="file" id="impFile" multiple>
-    <button id="btnUpload">Upload files</button>
+    <h1>Receipts:</h1>
+    <div class="receipt-wrapper">
+        {{#each receipt}}
+        <div class="receipt-item">
+            <h4>{{this.title}}</h4>
+            <p>{{this.description}}</p>
+            <img src="{{this.imgPath}}" attr="{{this.title}}">
+        </div>
+        {{else}}
+        <p>There are no receipts yet! :(</p>
+
+        {{/each}}
+    </div>
+
+
+    {{!-- <a href="/settings/add">Add a receipt</a> --}}
+
+    {{!-- <h1>Upload your receipts</h1>
+
+    <form action="/settings/add" method="post" enctype="multipart/form-data">
+        <label>Receipt label</label>
+        <input type="text" name="title">
+
+        <label>Description</label>
+        <input type="text" name="description">
+
+        <label>Photo of receipt</label>
+        <input type="file" name="photo">
+
+        <input type="submit" value="SAVE">
+    </form> --}}
+
+
+    {{!-- <input type="file" id="impFile" multiple>
+    <button id="btnUpload">Upload files</button> --}}
 
 
     {{!-- <form class="currency-form" action="/settings" method="POST">

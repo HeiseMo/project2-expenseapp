@@ -4,7 +4,8 @@
         <span class="close-button">&times;</span>
         <h1>Add expense</h1>
         <form id="add-expense-form" action="/dashboard" method="POST" autocomplete="off">
-            <select class="expense-type" id="expense-type" type="text" name="expenseType" placeholder="Expense Type..." required>
+            <select class="expense-type" id="expense-type" type="text" name="expenseType" placeholder="Expense Type..."
+                required>
                 <option value="" disabled selected>Select a Category</option>
                 <option value="Travel">Travel</option>
                 <option value="Health">Health</option>
@@ -20,9 +21,24 @@
             </select>
             <input id="expense-price" type="text" name="price" placeholder="Price..." required></input>
             <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..." required></input>
-            <input id="expense-description" type="text" name="description" placeholder="Description..." required></input>
+            <input id="expense-description" type="text" name="description" placeholder="Description..."
+                required></input>
             <button class="styled-add-btn" type="submit">Add</button>
         </form>
+
+        <form action="/settings" method="post" enctype="multipart/form-data">
+            <label>Receipt label</label>
+            <input type="text" name="title">
+
+            <label>Description</label>
+            <input type="text" name="description">
+
+            <label>Photo of receipt</label>
+            <input type="file" name="photo">
+
+            <input type="submit" value="SAVE">
+        </form>
+
 
 
         <div class="currency-container">
@@ -76,7 +92,7 @@
         <div class="name"><span>Timur James Tanurhan</span></div>
     </div>
     <div class="addExpenseBtn">
-    <span></span>
+        <span></span>
     </div>
     <div class="expenseBox" style="color: #19b698;">
         <div class="expenseName">

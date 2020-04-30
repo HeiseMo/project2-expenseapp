@@ -25,9 +25,9 @@ router.get("/faq", (req, res, next) => {
 });
 
 //settings routes
-router.get("/settings", (req, res, next) => {
-  res.render("items/settings");
-});
+// router.get("/settings", (req, res, next) => {
+//   res.render("items/settings");
+// });
 
 router.post("/settings", (req, res, next) => {
   const { currency } = req.body;

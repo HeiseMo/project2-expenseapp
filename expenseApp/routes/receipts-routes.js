@@ -2,17 +2,56 @@ const express = require("express");
 const User = require("../models/User");
 const Item = require("../models/Item");
 const Expense = require("../models/Expense");
+const Receipt = require("../models/Receipt");
 const multer = require("multer"); //for handling multipart data eg uploading files
-const fetch = require("node-fetch");
+const uploadCloud = require("../config/cloudinary.js");
 
 const router = express.Router();
 const app = express();
 const upload = multer();
 
-app.post("/upload", upload.any(), (req, res) => {
-  console.log(req.files);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.end("Done");
+// router.get("/settings", (req, res, next) => {
+//   console.log(req.user, "this is the user");
+
+//   User.findById(req.user._id).then((res) => {
+//     console.log(res);
+//   });
+
+//   res.render("items/settings");
+// });
+
+router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
+  const { title, description } = req.body;
+  const imgPath = req.file.url;
+  //console.log(imgPath, "this is the image path");
+  const imgName = req.file.originalname;
+  //console.log(imgName);
+
+  Receipt.create({ title, description, imgPath, imgName })
+    .then((receipt) => {
+      //console.log(receipt);
+      res.redirect("/settings");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
+  const { title, description } = req.body;
+  const imgPath = req.file.url;
+  //console.log(imgPath, "this is the image path");
+  const imgName = req.file.originalname;
+  //console.log(imgName);
+
+  Receipt.create({ title, description, imgPath, imgName })
+    .then((receipt) => {
+      //console.log(receipt);
+      res.redirect("/dashboard");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 module.exports = router;
