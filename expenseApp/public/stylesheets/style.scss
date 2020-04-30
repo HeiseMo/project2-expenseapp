@@ -33,7 +33,7 @@
   border-bottom-right-radius: 50px;
 }
 
-.nav:hover{
+.nav:hover {
   height: 10vh;
   margin-top: 0vh;
   transition: 1s;
@@ -75,12 +75,12 @@
   font-size: 56px;
 }
 
-.trigger>a {
+.trigger > a {
   text-decoration: none;
   color: white;
 }
 
-.trigger>a:hover {
+.trigger > a:hover {
   font-size: 86px;
   color: #19b698;
 }
@@ -259,13 +259,9 @@ body {
   background-position: right;
   background: #085078;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #85d8ce,
-      #085078);
+  background: -webkit-linear-gradient(to right, #85d8ce, #085078);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #85d8ce,
-      #085078);
+  background: linear-gradient(to right, #85d8ce, #085078);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   transition: ease-in 5s;
@@ -275,13 +271,9 @@ body {
 .submitBtn button:hover {
   background: #85d8ce;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #085078,
-      #85d8ce);
+  background: -webkit-linear-gradient(to right, #085078, #85d8ce);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #085078,
-      #85d8ce);
+  background: linear-gradient(to right, #085078, #85d8ce);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   color: white;
@@ -296,7 +288,7 @@ body {
   background: #19b698;
   font-family: monospace;
   align-items: center;
-  color: #001c6e
+  color: #001c6e;
 }
 
 .welcomeTitle {
@@ -320,7 +312,7 @@ body {
 }
 
 .welcomeSignup a {
-  color: #001c6e
+  color: #001c6e;
 }
 
 .welcomeSignup button {
@@ -425,12 +417,14 @@ body {
   border: none;
   outline: none;
   background: none;
-  background: #19b698 url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+  background: #19b698
+    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
 }
 
 [type="date"]::-webkit-inner-spin-button {
   display: none;
-  border: none
+  border: none;
 }
 
 [type="date"]::-webkit-calendar-picker-indicator {
@@ -443,6 +437,7 @@ body {
 
 .styled-form-btn {
   padding: 1%;
+  margin-bottom: 3%;
   background-color: #16a085;
   border: solid;
   border-radius: 20px;
@@ -453,6 +448,7 @@ body {
   font-size: 20px;
   transition-duration: 0.4s;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .styled-form-btn:hover {
@@ -513,8 +509,8 @@ ul li ul {
   display: none;
 }
 
-ul li:hover>ul,
-ul li:focus-within>ul,
+ul li:hover > ul,
+ul li:focus-within > ul,
 ul li ul:hover,
 ul li ul:focus {
   visibility: visible;
@@ -553,8 +549,7 @@ ul li ul li {
   justify-content: space-evenly;
 }
 
-
-.flex-daily>div {
+.flex-daily > div {
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -609,8 +604,16 @@ ul li ul li {
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 1rem 1.5rem;
-  width: 24rem;
+  width: 50%;
+  height: auto;
   border-radius: 0.5rem;
+}
+
+.modal h1 {
+  margin-top: 6%;
+  color: #333;
+  font-size: 42px;
+  text-align: center;
 }
 
 .close-button {
@@ -639,6 +642,60 @@ ul li ul li {
   margin: 5% 5%;
   background-color: #16a085;
   border: solid;
+}
+
+#add-expense-form {
+  margin: 10% auto 0 auto;
+  padding: 30px;
+  width: 60%;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+}
+
+#add-expense-form > input {
+  margin: 10px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 20px;
+}
+
+#add-expense-form > input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+#add-expense-form > input[type="submit"]:active {
+  opacity: 0.4;
+}
+
+.show-calc-btn {
+  margin: 5%;
+  float: left;
+  clear: left;
+  display: inline-block;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
+.styled-add-btn {
+  font-size: 18px;
+  padding: 4% 10%;
+  width: auto;
+  background: #1abc9c;
+  border: none;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -653,6 +710,71 @@ ul li ul li {
   color: #16a085;
 }
 
+//calculator
+
+.currency-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+.container-calculator {
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  padding-bottom: 5%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-group > select {
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin: 2%;
+}
+.form-control {
+  padding: 2% 6%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 15px;
+  margin: 3%;
+}
+
+.calculate-btn {
+  padding: 4% 10%;
+  margin: 5%;
+  width: auto;
+  background: #1abc9c;
+  border: solid;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.calculate-btn:hover {
+  background-color: #fff;
+  color: #16a085;
+}
+
+.currency-dropdowns {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.reveal-calc {
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+//FAQ
+
 #faq-container {
   color: #16a085;
   text-align: center;
@@ -666,13 +788,13 @@ ul li ul li {
   margin-bottom: 5%;
 }
 
-#faq-info>h2 {
+#faq-info > h2 {
   font-size: 34px;
   margin-top: 8%;
   margin-bottom: 2%;
 }
 
-#faq-info>p {
+#faq-info > p {
   font-size: 24px;
   margin-bottom: 8%;
 }
@@ -683,11 +805,61 @@ ul li ul li {
   margin-top: 5%;
 }
 
-.styled-btn>a {
+.styled-btn > a {
   color: white;
 }
 
-.styled-btn:hover>a {
+.styled-btn:hover > a {
   background-color: #fff;
   color: #16a085;
+}
+
+.edit-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 60%;
+  width: 60%;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 50px 0px;
+  margin: auto;
+  flex-direction: column;
+}
+
+.edit-form label {
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+
+.edit-form button {
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #f1f1f1;
+  background-color: #001c6e;
+  box-shadow: 5px 15px 15px 2px;
+}
+
+.expenseBox button {
+  color: #f1f1f1;
+  background-color: #001c6e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 15px 15px 2px;
+}
+
+//settings
+#settings-container {
+  padding: 10%;
+  color: white;
+  font-family: monospace;
+  font-size: 32px;
+  text-align: center;
 }

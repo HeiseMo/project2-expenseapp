@@ -7,9 +7,10 @@ document.addEventListener(
 );
 
 const crrncy = {
-  EUR: { USD: 1.08, AUD: 1.67 },
-  USD: { EUR: 0.92, AUD: 1.54 },
-  AUD: { USD: 0.65, EUR: 0.6 },
+  EUR: { USD: 1.08, AUD: 1.67, TL: 7.55 },
+  USD: { EUR: 0.92, AUD: 1.54, TL: 6.96 },
+  AUD: { USD: 0.65, EUR: 0.6, TL: 4.54 },
+  TL: { USD: 0.14, EUR: 0.13, AUD: 0.22 },
 };
 
 var btn = document.querySelector(".calculate-btn");
@@ -24,7 +25,7 @@ var showCalcBtn = document.querySelector(".show-calc-btn");
 var currencyCalc = document.querySelector(".container-calculator");
 
 function revealCalc() {
-  currencyCalc.classList.add("reveal-calc");
+  currencyCalc.classList.toggle("reveal-calc");
   console.log("reveal calc");
 }
 
@@ -45,8 +46,6 @@ function convertCurrency(event) {
     result = amount * (1 / crrncy[to][from]);
   }
 
-  toShowAmount.innerHTML = amount;
-  toShowBase.textContent = from + " = ";
   toShowSecond.textContent = to;
   toShowResult.textContent = result;
 }
