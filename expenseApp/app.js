@@ -31,9 +31,12 @@ const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/User");
 
 mongoose
-  .connect("mongodb://localhost/expenseapp", {
-    useNewUrlParser: true,
-  })
+  .connect(
+    "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
+    {
+      useNewUrlParser: true,
+    }
+  )
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
