@@ -109,11 +109,8 @@
             <option value="Gifts and Donations">Gifts and Donations</option>
             <option value="Other">Other</option>
         </select>
-        <label for="">Price</label>
         <input id="expense-price" type="text" name="price" placeholder="Price..." value="{{price}}"></input>
-        <label for="">Purchase Date</label>
         <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..." value="{{purchaseDate}}"></input>
-        <label for="">Description</label>
         <input id="expense-description" type="text" name="description" placeholder="Description..." value="{{description}}"></input>
         <button type="submit">Edit</button>
     </form>
@@ -173,7 +170,7 @@
 
 
     <script>
-        var expenseObject = {{{ expenseString }}}
+        var expenseObject = {{{ expenseString }}};
     </script>
     <script src="/javascripts/currency.js"></script>
     <script src="/javascripts/dashboard.js"></script>

@@ -406,15 +406,31 @@ body {
   font-size: 1em; }
 
 .datePickerForm {
-  min-width: 30vw; }
+  min-width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.datePicker select {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-self: center; }
 
 .datePicker button {
-  font-size: 1em;
-  padding: 2px;
-  border: solid 0.05em black;
+  padding: 20%;
+  margin-bottom: 3%;
+  background-color: #16a085;
+  border: solid;
   border-radius: 20px;
-  outline: none;
-  background: white; }
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: static; }
 
 .styled-form-btn {
   padding: 1%;
