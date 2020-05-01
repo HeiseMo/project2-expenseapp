@@ -5,12 +5,16 @@
         <h1>Daily Reports</h1>
         <div class="reportWrapperSmall">
         <div class="datePicker">
-            <form action="/expenses/daily" method="GET">
+            <form class="datePickerForm" action="/expenses/daily" method="GET">
+            <div>
                 <span>Period:</span>
                 <input class="start" type="date" id="start" name="day">
                 <span>-</span>
                 <input class="end" type="date" id="end" name="end">
+            </div>
+                <div>
                 <button class="" type="submit">Search</button>
+                </div>
             </form>
         </div>
         </div>
@@ -62,7 +66,7 @@
         {{/each}}
 </div>
 <script>
-    var expenseObject = {{{ expenseString }}}
+    var expenseObject = {{{ expenseString }}};
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="/javascripts/daily.js"></script>
