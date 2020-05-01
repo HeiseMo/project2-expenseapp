@@ -344,7 +344,8 @@ body {
   color: white;
   display: flex;
   align-items: center;
-  margin-bottom: 5vh; }
+  margin-bottom: 5vh;
+  position: relative; }
 
 .reportWrapperBig {
   background-color: #19b698;
