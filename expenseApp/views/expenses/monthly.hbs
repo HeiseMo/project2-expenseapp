@@ -5,10 +5,14 @@
         <h1>Monthly Reports</h1>
         <div class="reportWrapperSmall">
         <div class="datePicker">
-            <form action="/expenses/monthly" method="GET">
+            <form class="datePickerForm" action="/expenses/monthly" method="GET">
+            <div>
                 <label for="start">Month</label>
                 <input type="month" name="month">
-                <button type="submit">search</button>
+            </div>
+                <div>
+                    <button type="submit">Search</button>
+                </div>
             </form>
         </div>
         </div>
