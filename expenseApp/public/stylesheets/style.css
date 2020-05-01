@@ -263,6 +263,7 @@ body {
   color: white; }
 
 .overlay-right {
+  margin-left: 6vh;
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -278,18 +279,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 5vh;
   width: 100%;
-  font-size: 28px; }
+  font-size: 28px;
+  text-align: center; }
 
 .welcomeContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 90%;
   margin: 5vh;
   font-size: 1.6em; }
+
+.welcomeContent > p {
+  line-height: 1.5em; }
 
 .welcomeSignup a {
   color: #001c6e; }
@@ -344,7 +349,8 @@ body {
   color: white;
   display: flex;
   align-items: center;
-  margin-bottom: 5vh; }
+  margin-bottom: 5vh;
+  position: relative; }
 
 .reportWrapperBig {
   background-color: #19b698;
@@ -734,19 +740,23 @@ ul li ul li {
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; }
 
+hr {
+  border: 0.5px solid #1abc9c; }
+
 #faq-container {
-  color: #16a085;
+  color: #001c6e;
   text-align: center;
-  width: 80%;
+  width: 60%;
   margin: 0% 5%; }
 
 #faq-container h1 {
-  font-size: 54px;
-  margin-top: 5%;
-  margin-bottom: 5%; }
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e;
+  margin-bottom: 3vh; }
 
 #faq-info > h2 {
-  font-size: 34px;
+  font-size: 2.2em;
   margin-top: 8%;
   margin-bottom: 2%; }
 
@@ -805,23 +815,72 @@ ul li ul li {
   border-radius: 10px;
   margin-bottom: 1vh; }
 
-#settings-container {
-  padding: 10%;
-  color: white;
-  font-family: monospace;
-  font-size: 32px;
-  text-align: center; }
+#receipts-heading {
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e; }
+
+#receipts-container {
+  color: #001c6e;
+  font-size: 1em;
+  text-align: left;
+  margin: 4vh; }
+
+#receipts-container > h4 {
+  font-size: 1.4em; }
+
+#receipts-uploads {
+  display: flex;
+  align-content: space-around;
+  margin-bottom: 1.2vh;
+  margin-top: 2vh;
+  line-height: 1.2em; }
+
+#receipts-upload-btn {
+  font-size: 1em;
+  color: #f1f1f1;
+  background-color: #001c6e;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 1vh;
+  margin-top: 1vh; }
 
 .receipts-wrapper {
-  display: flex;
-  flex-wrap: wrap; }
+  color: #001c6e;
+  overflow: hidden; }
+
+#choose-file {
+  color: #001c6e; }
 
 .receipts-item {
-  width: 30%;
-  margin: 15px; }
+  width: 20vh;
+  height: 40vh;
+  margin: 15px;
+  float: left; }
 
-.receipts-item img {
-  width: 50%; }
+.zoom {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  transition: transform 0.2s;
+  /* Animation */
+  margin: 0 auto; }
+
+.zoom:hover {
+  transform: scale(1.5); }
+
+.receipts-item h4 {
+  margin-bottom: 6%;
+  font-size: 1.2em; }
+
+@media (max-width: 20em) {
+  .receipts-wrapper,
+  .receipts-item {
+    float: none;
+    width: auto; } }
+
+.description-receipt {
+  padding-bottom: 1.4vh; }
 
 .expense-type {
   display: block;
@@ -859,5 +918,10 @@ ul li ul li {
 
 .expense-type option {
   font-weight: normal; }
+
+.name {
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e; }
 
 /*# sourceMappingURL=style.css.map */
