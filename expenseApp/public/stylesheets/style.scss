@@ -693,7 +693,7 @@ ul li ul li {
 
 .modal-content {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -702,7 +702,7 @@ ul li ul li {
 }
 
 .modal h1 {
-  margin-top: 6%;
+  // margin-top: 6%;
   color: #333;
   font-size: 42px;
   text-align: center;
