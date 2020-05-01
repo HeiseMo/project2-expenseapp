@@ -5,7 +5,7 @@
 
     <div id="receipts-container">
         <div id="receipts-uploads">
-            <form action="/settings" method="post" enctype="multipart/form-data">
+            <form class="receipt-input-style" action="/settings" method="post" enctype="multipart/form-data">
                 <input type="text" name="title" placeholder="Receipt type..." required>
                 <input type="text" name="description" placeholder="Description...">
                 <input type="date" name="date" placeholder="Date..." required></input>
@@ -29,7 +29,6 @@
 </div>
 
 <script>
-    var receiptObject = {{{ receiptString }}}
 </script>
 
 <script src="/javascripts/settings.js"></script>

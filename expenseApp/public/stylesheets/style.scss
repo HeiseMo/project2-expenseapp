@@ -155,8 +155,8 @@ body {
   text-align: end;
   width: 100%;
   height: 10vh;
-  margin-top:5vh;
-  margin-bottom:10vh;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
 }
 
 .expenseBox {
@@ -403,7 +403,7 @@ body {
   width: 80%;
   min-height: 25vh;
   height: 100%;
-  margin-top:10vh;
+  margin-top: 10vh;
 }
 
 .reportWrapperSmall {
@@ -1027,6 +1027,26 @@ hr {
   font-size: 1.4em;
 }
 
+.receipt-input-style > input {
+  padding: 10px 5px;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+#choose-file {
+  border-style: none;
+}
+
 #receipts-uploads {
   display: flex;
   align-content: space-around;
@@ -1036,14 +1056,29 @@ hr {
 }
 
 #receipts-upload-btn {
-  font-size: 1em;
+  font-size: 1.5m;
   color: #f1f1f1;
   background-color: #001c6e;
-  padding: 5px 10px;
+  padding: 10x 5px;
   border-radius: 10px;
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
+
+// #choose-file ::-webkit-file-upload-button{
+//   outline: none;
+//   border: 1px solid #bbb;
+//   border-radius: 20px;
+//   display: inline-block;
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+//   -webkit-transition: 0.2s ease all;
+//   -moz-transition: 0.2s ease all;
+//   -ms-transition: 0.2s ease all;
+//   -o-transition: 0.2s ease all;
+//   transition: 0.2s ease all;
+// }
 
 .receipts-wrapper {
   //display: flex;
@@ -1057,7 +1092,7 @@ hr {
 
 .receipts-item {
   width: 20vh;
-  height: 40vh;
+  height: 30vh;
   margin: 15px;
   float: left;
 }
