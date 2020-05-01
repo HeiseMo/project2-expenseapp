@@ -20,22 +20,21 @@ router.get("/settings", ensureLogin.ensureLoggedIn(), (req, res) => {
   });
 });
 
-// router.get("/settings", (req, res, next) => {
-//   console.log(req.user, "this is the user");
-//   Receipt.find().then((receipt) => {
-//     console.log(receipt);
-//     res.render("items/settings", { receipt: receipt });
-//   });
-// });
-
 router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, date } = req.body;
   const imgPath = req.file.url;
   //console.log(imgPath, "this is the image path");
   const imgName = req.file.originalname;
   //console.log(imgName);
 
-  Receipt.create({ title, description, imgPath, imgName, user: req.user._id })
+  Receipt.create({
+    title,
+    description,
+    date,
+    imgPath,
+    imgName,
+    user: req.user._id,
+  })
     .then((receipt) => {
       //console.log(receipt);
       res.redirect("/settings");
