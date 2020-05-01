@@ -183,7 +183,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 70vh;
-  width: 35vw;
+  width: 40vw;
+  min-width: 40vw;
+  min-height: 75vh;
   justify-content: center;
   align-items: center;
   background-color: #ecf0f1;
@@ -209,7 +211,7 @@ body {
   width: 100%; }
 
 .inputBox {
-  height: 2vh;
+  min-height: 3vh;
   width: 15vw;
   margin-bottom: 40px;
   display: flex;
