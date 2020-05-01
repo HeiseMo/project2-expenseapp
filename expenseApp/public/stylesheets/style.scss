@@ -73,18 +73,18 @@
 }
 
 .addExpenseBtn:after {
-  content: "Add";
+  background: #19b698;
+  content: "+";
   width: 7vw;
   height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 92vw;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #19b698;
   color: white;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 600;
   transition: 0.5s;
   overflow: hidden;
@@ -92,9 +92,8 @@
 
 .addExpenseBtn:hover:after {
   content: "Add Expense";
-  font-size: 1em;
+  font-size: 1.5em;
   width: 15vw;
-  margin-left: 85vw;
   transition: 0.2s;
   overflow: hidden;
 }
@@ -150,6 +149,16 @@ body {
   border-radius: 40px;
 }
 
+.controller {
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
+  width: 100%;
+  height: 10vh;
+  margin-top:5vh;
+  margin-bottom:10vh;
+}
+
 .expenseBox {
   height: 5vh;
   width: 70%;
@@ -168,7 +177,7 @@ body {
 .expenseBox:hover {
   border-top: solid 25px white;
   border-radius: 100px;
-  transition: ease 1s;
+  transition: ease 0.5s;
 }
 
 .expenseName {
@@ -308,6 +317,7 @@ body {
 }
 
 .overlay-right {
+  margin-left: 6vh;
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -324,9 +334,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 5vh;
   width: 100%;
   font-size: 28px;
+  text-align: center;
 }
 
 .welcomeContent {
@@ -334,10 +344,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   // height: 10%;
   width: 90%;
   margin: 5vh;
   font-size: 1.6em;
+}
+
+.welcomeContent > p {
+  line-height: 1.5em;
 }
 
 .welcomeSignup a {
@@ -388,6 +403,7 @@ body {
   width: 80%;
   min-height: 25vh;
   height: 100%;
+  margin-top:10vh;
 }
 
 .reportWrapperSmall {
@@ -421,22 +437,14 @@ body {
 .reportInfo {
   height: 3vh;
   width: 17vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.reportInfo span {
-  font-size: 1em;
-  font-weight: 600;
-  min-width: 20vw;
+  padding-top: 1.5vh;
 }
 
 .reportInfo span {
   margin-left: 1vw;
   font-size: 1em;
   font-weight: 600;
-  min-width: 20vw;
+  min-width: 10vw;
 }
 
 .datePicker {
@@ -469,6 +477,36 @@ body {
 
 .datePicker span {
   font-size: 1em;
+}
+
+.datePickerForm {
+  min-width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.datePicker select {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.datePicker button {
+  padding: 20%;
+  margin-bottom: 3%;
+  background-color: #16a085;
+  border: solid;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: static;
 }
 
 .styled-form-btn {
@@ -548,6 +586,7 @@ ul li ul {
   margin-top: 1rem;
   left: 0;
   display: none;
+  font-size: 1em;
 }
 
 ul li:hover > ul,
@@ -639,6 +678,19 @@ ul li ul li {
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
+.modalEdit {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
 .modal-content {
   position: absolute;
   top: 50%;
@@ -673,6 +725,13 @@ ul li ul li {
 }
 
 .show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-edit-modal {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
@@ -861,22 +920,26 @@ ul li ul li {
 }
 
 //FAQ
+hr {
+  border: 0.5px solid #1abc9c;
+}
 
 #faq-container {
-  color: #16a085;
+  color: #001c6e;
   text-align: center;
-  width: 80%;
+  width: 60%;
   margin: 0% 5%;
 }
 
 #faq-container h1 {
-  font-size: 54px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e;
+  margin-bottom: 3vh;
 }
 
 #faq-info > h2 {
-  font-size: 34px;
+  font-size: 2.2em;
   margin-top: 8%;
   margin-bottom: 2%;
 }
@@ -946,27 +1009,86 @@ ul li ul li {
   margin-bottom: 1vh;
 }
 
-//settings
-#settings-container {
-  padding: 10%;
-  color: white;
-  font-family: monospace;
-  font-size: 32px;
-  text-align: center;
+//receipts (still called settings in file structure)
+#receipts-heading {
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e;
+}
+
+#receipts-container {
+  color: #001c6e;
+  font-size: 1em;
+  text-align: left;
+  margin: 4vh;
+}
+
+#receipts-container > h4 {
+  font-size: 1.4em;
+}
+
+#receipts-uploads {
+  display: flex;
+  align-content: space-around;
+  margin-bottom: 1.2vh;
+  margin-top: 2vh;
+  line-height: 1.2em;
+}
+
+#receipts-upload-btn {
+  font-size: 1em;
+  color: #f1f1f1;
+  background-color: #001c6e;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .receipts-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  //display: flex;
+  color: #001c6e;
+  overflow: hidden;
+}
+
+#choose-file {
+  color: #001c6e;
 }
 
 .receipts-item {
-  width: 30%;
+  width: 20vh;
+  height: 40vh;
   margin: 15px;
+  float: left;
 }
 
-.receipts-item img {
-  width: 50%;
+.zoom {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  transition: transform 0.2s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}
+
+.receipts-item h4 {
+  margin-bottom: 6%;
+  font-size: 1.2em;
+}
+
+@media (max-width: 20em) {
+  .receipts-wrapper,
+  .receipts-item {
+    float: none;
+    width: auto;
+  }
+}
+
+.description-receipt {
+  padding-bottom: 1.4vh;
 }
 
 .expense-type {
@@ -1010,4 +1132,10 @@ ul li ul li {
 
 .expense-type option {
   font-weight: normal;
+}
+
+.name {
+  font-size: 40px;
+  margin-top: 4vh;
+  color: #001c6e;
 }

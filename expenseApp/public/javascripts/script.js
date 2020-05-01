@@ -18,4 +18,10 @@ const languages = {
     passwordPlaceholder: "Sifre",
     dashboardAddExpenseH1: "Gider Ekle"
   }
+  dt: {
+    overlayLogin: "Anmelden",
+    usernamePlaceholder: "Benutzername",
+    passwordPlaceholder: "Passwort",
+    dashboardAddExpenseH1: "Ausgabe hinzufügen"
+  }
 };

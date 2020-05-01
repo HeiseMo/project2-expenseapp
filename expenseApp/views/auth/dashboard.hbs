@@ -26,20 +26,6 @@
             <button class="styled-add-btn" type="submit">Add</button>
         </form>
 
-        <form action="/settings" method="post" enctype="multipart/form-data">
-            <label>Receipt label</label>
-            <input type="text" name="title">
-
-            <label>Description</label>
-            <input type="text" name="description">
-
-            <label>Photo of receipt</label>
-            <input type="file" name="photo">
-
-            <input type="submit" value="SAVE">
-        </form>
-
-
 
         <div class="currency-container">
             <a class="show-calc-btn">Paid in a foreign currency?</a>
@@ -85,62 +71,95 @@
 
     </div>
 </div>
-
-<div class="main">
-    <div class="mainBoxHeader">
-        <div class="avatar"></div>
-        <div class="name"><span>Timur James Tanurhan</span></div>
+{{#if success}}
+<div class="modalEdit show-modal">
+    {{else}}
+    <div class="modalEdit">
+        {{/if}}
+        <div class="modal-content">
+            {{#with oneExpense}}
+            <span class="close-button">&times;</span>
+            <h1 id="dashboardAddExpenseH1">Edit expense</h1>
+            <form id="add-expense-form" class="edit-form" action="/dashboard/{{_id}}/edit" method="POST">
+                <select class="expense-type" id="expense-type" type="text" name="expenseType"
+                    placeholder="Expense Type..." required>
+                    <option value="" disabled selected>Select a Category</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Health">Health</option>
+                    <option value="Food">Food</option>
+                    <option value="Bills & Utilities">Bills & Utilities</option>
+                    <option value="Automobile">Automobile</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Personal Care">Personal Care</option>
+                    <option value="Gifts and Donations">Gifts and Donations</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input id="expense-price" type="text" name="price" placeholder="Price..." value="{{price}}"></input>
+                <input id="expense-purchaseDate" type="date" name="purchaseDate" placeholder="Date..."
+                    value="{{purchaseDate}}"></input>
+                <input id="expense-description" type="text" name="description" placeholder="Description..."
+                    value="{{description}}"></input>
+                <button type="submit">Edit</button>
+            </form>
+            {{/with}}
+        </div>
     </div>
-    <div class="addExpenseBtn">
-        <span></span>
-    </div>
-    <div class="expenseBox" style="color: #19b698;">
-        <div class="expenseName">
-            <p>Expense Type</p>
-        </div>
-        <div class="expenseDate">
-            <p>Purchase Date</p>
-        </div>
-        <div class="expenseCreator">
-            <p>Description</p>
-        </div>
-        <div class="expenseSum">
-            <p>Sum</p>
-        </div>
-        <div class="expenseSum">
-            <p style="visibility: hidden">Edit</p>
-        </div>
-        <div class="expenseSum">
-            <p style="visibility: hidden;">Delete</p>
-        </div>
 
-    </div>
-    {{#each expense}}
-    <div class="expenseBox">
-        <div class="expenseName">
-            <p>{{expenseType}}</p>
+    <div class="main">
+        <div class="controller">
+            <div class="addExpenseBtn">
+                <span></span>
+            </div>
         </div>
-        <div class="expenseDate">
-            <p>{{purchaseDate}}</p>
+        <div class="expenseBox" style="color: #19b698;">
+            <div class="expenseName">
+                <p>Expense Type</p>
+            </div>
+            <div class="expenseDate">
+                <p>Purchase Date</p>
+            </div>
+            <div class="expenseCreator">
+                <p>Description</p>
+            </div>
+            <div class="expenseSum">
+                <p>Sum</p>
+            </div>
+            <div class="expenseSum">
+                <p style="visibility: hidden">Edit</p>
+            </div>
+            <div class="expenseSum">
+                <p style="visibility: hidden;">Delete</p>
+            </div>
+
         </div>
-        <div class="expenseCreator">
-            <p>{{description}}</p>
-        </div>
-        <div class="expenseSum">
-            <p>{{price}}</p>
-        </div>
-        <a href="/dashboard/{{_id}}/edit"><button>Edit</button></a>
-        <form action="/dashboard/{{_id}}/delete" method="POST">
-            <button type="submit" name="{{_id}}">Delete</button>
-        </form>
+        {{#each expense}}
+        <div class="expenseBox">
+            <div class="expenseName">
+                <p>{{expenseType}}</p>
+            </div>
+            <div class="expenseDate">
+                <p>{{purchaseDate}}</p>
+            </div>
+            <div class="expenseCreator">
+                <p>{{description}}</p>
+            </div>
+            <div class="expenseSum">
+                <p>{{price}}</p>
+            </div>
+            <a class="editExpenseBtn" href="/dashboard/{{_id}}/edit"><button>Edit</button></a>
+            <form action="/dashboard/{{_id}}/delete" method="POST">
+                <button type="submit" name="{{_id}}">Delete</button>
+            </form>
 
 
-    </div>
-    {{/each}}
+        </div>
+        {{/each}}
 
 
-    <script>
-        var expenseObject = {{{ expenseString }}}
-    </script>
-    <script src="/javascripts/currency.js"></script>
-    <script src="/javascripts/dashboard.js"></script>
+        <script>
+            var expenseObject = {{{ expenseString }}};
+        </script>
+        <script src="/javascripts/currency.js"></script>
+        <script src="/javascripts/dashboard.js"></script>

@@ -19,8 +19,7 @@ router.post("/dashboard", (req, res) => {
   const newExpense = new Expense({
     user: req.user._id,
     expenseType,
-    createdDate:
-      dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear(),
+    createdDate: dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear(),
     price,
     purchaseDate,
     // dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear(),
@@ -41,9 +40,9 @@ router.post("/dashboard", (req, res) => {
 });
 
 router.get("/expenses/daily", ensureLogin.ensureLoggedIn(), (req, res) => {
-  let day = req.query.day
-    ? req.query.day
-    : new Date().toISOString().slice(0, 10);
+  let day = req.query.day ?
+    req.query.day :
+    new Date().toISOString().slice(0, 10);
   // let start = req.query.start;
   let end = req.query.end;
   const userId = req.user._id;
@@ -51,8 +50,16 @@ router.get("/expenses/daily", ensureLogin.ensureLoggedIn(), (req, res) => {
   console.log(day, end);
 
   if (day && end) {
-    Expense.find({ user: req.user._id, purchaseDate: { $gte: day, $lte: end } })
-      .sort({ purchaseDate: 1 })
+    Expense.find({
+        user: req.user._id,
+        purchaseDate: {
+          $gte: day,
+          $lte: end
+        }
+      })
+      .sort({
+        purchaseDate: 1
+      })
       .then((expenseData) => {
         console.log(expenseData);
         res.render("expenses/daily", {
@@ -62,8 +69,13 @@ router.get("/expenses/daily", ensureLogin.ensureLoggedIn(), (req, res) => {
       })
       .catch((err) => console.log("error", err));
   } else if (day) {
-    Expense.find({ user: req.user._id, purchaseDate: day })
-      .sort({ purchaseDate: 1 })
+    Expense.find({
+        user: req.user._id,
+        purchaseDate: day
+      })
+      .sort({
+        purchaseDate: 1
+      })
       .then((expenseData) => {
         console.log(expenseData);
         res.render("expenses/daily", {
@@ -133,7 +145,9 @@ router.get(
   ensureLogin.ensureLoggedIn(),
   (req, res, next) => {
     let month = req.query.month;
-    Expense.find({ user: req.user._id })
+    Expense.find({
+        user: req.user._id
+      })
       .then((expenseData) => {
         expenseData = expenseData
           .sort((a, b) => a.purchaseDate - b.purchaseDate)
@@ -158,7 +172,9 @@ router.get(
   (req, res, next) => {
     let year = req.query.year;
     console.log("typeof", year);
-    Expense.find({ user: req.user._id })
+    Expense.find({
+        user: req.user._id
+      })
       .then((expenseData) => {
         expenseData = expenseData
           .sort((a, b) => a.purchaseDate - b.purchaseDate)
@@ -179,18 +195,35 @@ router.get(
 );
 
 router.get("/dashboard/:id/edit", (req, res, next) => {
-  //res.send("Hey");
-  Expense.findById(req.params.id).then((expenseData) => {
-    console.log(expenseData);
-    res.render("expenses/edit", { oneExpense: expenseData });
+  Expense.findById(req.params.id).then((expenseDataOne) => {
+    Expense.find({
+      user: req.user._id
+    }).then((expenseData) => {
+      console.log(expenseData);
+      res.render("auth/dashboard", {
+        oneExpense: expenseDataOne,
+        expense: expenseData,
+        success: true
+      });
+    });
   });
 });
 
 router.post("/dashboard/:id/edit", (req, res, next) => {
-  const { expenseType, purchaseDate, price, description } = req.body;
+  const {
+    expenseType,
+    purchaseDate,
+    price,
+    description
+  } = req.body;
   Expense.findByIdAndUpdate(req.params.id, {
-    $set: { expenseType, purchaseDate, price, description },
-  })
+      $set: {
+        expenseType,
+        purchaseDate,
+        price,
+        description
+      },
+    })
     .then((expenseData) => {
       res.redirect("/dashboard");
     })

@@ -1,39 +1,35 @@
 {{> privateHeader}}
 <link rel="stylesheet" href="/stylesheets/settings-styles.css">
+<div class="main">
+    <h1 id="receipts-heading">Receipts & Invoices</h1>
 
-
-<div id="settings-container">
-
-    <h1>Receipts:</h1>
-    <div class="receipt-wrapper">
-        {{#each receipt}}
-        <div class="receipt-item">
-            <h4>{{this.title}}</h4>
-            <p>{{this.description}}</p>
-            <img src="{{this.imgPath}}" attr="{{this.title}}">
-            <p>Date uploaded: {{this.created_at}}</p>
+    <div id="receipts-container">
+        <div id="receipts-uploads">
+            <form action="/settings" method="post" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Receipt type..." required>
+                <input type="text" name="description" placeholder="Description...">
+                <input type="date" name="date" placeholder="Date..." required></input>
+                <input id="choose-file" type="file" name="photo" required>
+                <input id="receipts-upload-btn" type="submit" value="Upload">
+            </form>
         </div>
-        {{else}}
-        <p>There are no receipts yet! :(</p>
-
-        {{/each}}
+        <div class="receipts-wrapper">
+            {{#each receipt}}
+            <div class="receipts-item">
+                <img class="zoom" src="{{this.imgPath}}" attr="{{this.title}}">
+                <h4><strong>{{this.title}}</strong></h4>
+                <p><strong>Date: </strong>{{this.date}}</p>
+                <p class="description-receipt"><strong>Details: </strong>{{this.description}}</p>
+            </div>
+            {{else}}
+            <p>You haven't uploaded any receipts yet!</p>
+            {{/each}}
+        </div>
     </div>
-
-
-    <h4>Upload your receipts</h4>
-
-    <form action="/settings" method="post" enctype="multipart/form-data">
-        <label>Receipt label</label>
-        <input type="text" name="title">
-
-        <label>Description</label>
-        <input type="text" name="description">
-
-        <label>Photo of receipt</label>
-        <input type="file" name="photo">
-
-        <input type="submit" value="SAVE">
-    </form>
 </div>
+
+<script>
+    var receiptObject = {{{ receiptString }}}
+</script>
 
 <script src="/javascripts/settings.js"></script>
