@@ -34,8 +34,8 @@ const User = require("./models/User");
 
 mongoose
   .connect(
-    "mongodb://localhost/expenseapp",
-    // "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
+    // "mongodb://localhost/expenseapp",
+    "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
     {
       useNewUrlParser: true,
     }
